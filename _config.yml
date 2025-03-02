@@ -20,7 +20,7 @@ permalink:           /:title
 plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
-title:		           'Ning's'
+title:		           'Ning'
 description:	       'Personal Blog'
 author:              'the Jekyll theme Lagrange'
 
