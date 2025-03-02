@@ -21,8 +21,8 @@ plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-t
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
 title:		           'Ning's'
-description:	       'Personal Blog by the Jekyll theme Lagrange'
-author:              'Ning Xia'
+description:	       'Personal Blog'
+author:              'the Jekyll theme Lagrange'
 
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
 #feed:
