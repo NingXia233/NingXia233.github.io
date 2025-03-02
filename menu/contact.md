@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Research
-permalink: /res
+permalink: /contact
 ---
 
 My Publications:
