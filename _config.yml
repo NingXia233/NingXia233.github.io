@@ -28,8 +28,8 @@ author:              'the Jekyll theme Lagrange'
 comments:
   provider: valine
   valine:
-    app_id: # your app_id
-    app_key: # your app_key
+    app_id: StwOUiVAVTVdsND5kOqvM7dy-gzGzoHsz # your app_id
+    app_key: TqViHH2IJYdOvjUm5H6eZJcn # your app_key
     placeholder: Add your comments here...
     avatar: mp
     meta: [nick, mail, link]
