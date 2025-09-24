@@ -7,7 +7,7 @@
       appKey: '{{ site.comments.valine.app_key }}',
       placeholder: '{{ site.comments.valine.placeholder }}',
       avatar: '{{ site.comments.valine.avatar }}',
-      meta: {{ site.comments.valine.meta | jsonify }},
+      meta: ['{{ site.comments.valine.meta | join: "','"}}'],
       pageSize: '{{ site.comments.valine.pageSize }}',
       lang: '{{ site.comments.valine.lang }}',
       visitor: '{{ site.comments.valine.visitor }}',
