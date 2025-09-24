@@ -2,25 +2,3 @@
 layout: home
 title: Home
 ---
-
-<!-- 个人介绍部分 -->
-<h1>我是夏宁 (Ning Xia)</h1>
-<p>欢迎来到我的个人主页。我是一名物理学研究者，目前的研究方向是强关联电子系统。我对理论物理和编程充满热情。</p>
-<p>
-  <a href="/writing">阅读我的笔记</a> | 
-  <a href="/contact">了解我的研究</a> | 
-  <a href="https://github.com/NingXia233">关注我的 GitHub</a>
-</p>
-
-<hr>
-
-<!-- 最新文章 -->
-<h2>最新文章</h2>
-<ul>
-  {% for post in site.posts limit:3 %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-    </li>
-  {% endfor %}
-</ul>
