@@ -8,9 +8,9 @@ google-ID: ''
 
 menu:
 - {name: 'About',   url: 'about.html'}
-- {name: 'Notes', url: 'writing.html'}
-- {name: 'Research', url: 'contact.html'}
-
+- {name: 'Notes', url: 'notes.html'}
+- {name: 'Novel', url: 'novel.html'}
+- {name: 'Research', url: 'research.html'}
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:
 - {icon: 'github',     link: 'https://www.github.com/NingXia233'}

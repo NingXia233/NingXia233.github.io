@@ -1,5 +1,6 @@
 ---
 layout: archive
-title: Writing
-permalink: /writing
+title: Novel
+permalink: /novel
+category: novel
 ---

@@ -6,8 +6,14 @@ layout: default
   {{ page.title }}
 </h1>
 
+{% if page.category %}
+  {% assign posts_to_show = site.categories[page.category] %}
+{% else %}
+  {% assign posts_to_show = site.posts %}
+{% endif %}
+
 <ul class="posts-container">
-  {% for post in site.posts %}
+  {% for post in posts_to_show %}
     {% unless post.next %}
       <h3>{{ post.date | date: '%Y' }}</h3>
     {% else %}
