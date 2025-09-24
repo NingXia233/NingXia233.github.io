@@ -24,6 +24,21 @@ title:		           'Ning'
 description:	       'Personal Blog'
 author:              'the Jekyll theme Lagrange'
 
+# Comments
+comments:
+  provider: valine
+  valine:
+    app_id: # your app_id
+    app_key: # your app_key
+    placeholder: Add your comments here...
+    avatar: mp
+    meta: [nick, mail, link]
+    pageSize: 10
+    lang: en
+    visitor: false
+    highlight: true
+    recordIP: false
+
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
 #feed:
 #  path: rss-feed.xml

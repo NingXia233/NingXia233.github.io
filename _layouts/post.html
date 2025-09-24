@@ -20,6 +20,6 @@ layout: default
 {% if site.hide_related_posts != true %}
   {% include related-posts.html %}
 {% endif %}
-{% if site.data.settings.disqus.comments %}
-  {% include disqus.html %}
+{% if site.comments.provider == "valine" %}
+  {% include valine.html %}
 {% endif %}

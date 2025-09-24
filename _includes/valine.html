@@ -1,0 +1,18 @@
+<section class="disqus">
+  <div id="vcomments"></div>
+  <script>
+    new Valine({
+      el: '#vcomments',
+      appId: '{{ site.comments.valine.app_id }}',
+      appKey: '{{ site.comments.valine.app_key }}',
+      placeholder: '{{ site.comments.valine.placeholder }}',
+      avatar: '{{ site.comments.valine.avatar }}',
+      meta: {{ site.comments.valine.meta | jsonify }},
+      pageSize: '{{ site.comments.valine.pageSize }}',
+      lang: '{{ site.comments.valine.lang }}',
+      visitor: '{{ site.comments.valine.visitor }}',
+      highlight: '{{ site.comments.valine.highlight }}',
+      recordIP: '{{ site.comments.valine.recordIP }}'
+    })
+  </script>
+</section>
