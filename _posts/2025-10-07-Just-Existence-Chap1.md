@@ -3,7 +3,7 @@ layout: post
 title: "恰好存在 第一章：徘徊者"
 author: "Ning Xia"
 categories: novel
-tags: [documentation,sample]
+tags: [documentation]
 image: cutting.jpg
 ---
 

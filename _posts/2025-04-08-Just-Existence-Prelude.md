@@ -3,7 +3,7 @@ layout: post
 title: "恰好存在 第零章： 序"
 author: "Ning Xia"
 categories: novel
-tags: [documentation,sample]
+tags: [documentation]
 image: cutting.jpg
 ---
 
