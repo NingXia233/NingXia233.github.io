@@ -11,6 +11,7 @@ menu:
 - {name: 'Notes', url: 'notes.html'}
 - {name: 'Novel', url: 'novel.html'}
 - {name: 'Research', url: 'research.html'}
+- {name: 'Gallery', url: 'gallery/'}
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:
 - {icon: 'github',     link: 'https://www.github.com/NingXia233'}
