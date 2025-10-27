@@ -5,6 +5,6 @@ date: 2025-10-21
 image: /assets/img/gallery/sample2.jpg
 ---
 
-这是我的第二幅示例作品。
+小镇里最会讲故事的猫猫
 
-![示例作品2](/assets/img/gallery/sample2.jpg)
+![圣诞玲奈](/assets/img/gallery/sample2.jpg)
