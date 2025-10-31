@@ -88,7 +88,7 @@ $$A[Q,P]+A[Q,P']=A[Q',P]+A[Q',P']$$
 另一方面，波函数还需要在边界处满足导数的跳变条件，考虑对薛定谔方程在边界处积分：
 
 $$
-\int_{0^-}^{0^+}d(x_{Q_4}-x_{Q_3})\bigg[-\sum_i \frac{\partial^2\psi}{\partial x_i^2}+2c\delta(x_{Q_3}-x_{Q_4})\psi\bigg]=0
+\int_{0^-}^{0^+}d(x_{Q_3}-x_{Q_4})\bigg[-\sum_i \frac{\partial^2\psi}{\partial x_i^2}+2c\delta(x_{Q_3}-x_{Q_4})\psi\bigg]=0
 $$
 
 进一步处理得到：
@@ -101,8 +101,8 @@ $$
 
 $$
 \begin{aligned}
-&i\sum_P A[Q,P](p_i-p_j)\exp(i[...+p_ix_{Q_3}+p_j x_{Q_4}+...])+\\
-&i\sum_P A[Q',P](p_i-p_j)\exp(i[...+p_jx_{Q_3}+p_i x_{Q_4}]+...)=\\
+&i\sum_P A[Q,P](p_j-p_i)\exp(i[...+p_ix_{Q_3}+p_j x_{Q_4}+...])+\\
+&i\sum_P A[Q',P](p_j-p_i)\exp(i[...+p_jx_{Q_3}+p_i x_{Q_4}]+...)=\\
 &2c\sum_P A[Q,P] \exp(i[...+p_i x_{Q_3}+p_j x_{Q_4}+...])
 \end{aligned}
 $$
@@ -111,8 +111,8 @@ $$
 
 $$
 \begin{aligned}
-&i\sum_P'\bigg[A[Q,P]-A[Q',P']\bigg](p_i-p_j)\exp(i[...+p_i x_{Q_3}+p_j x_{Q_4}+...]) +\\
-&i\sum_P'\bigg[A[Q',P]-A[Q,P']\bigg](p_i-p_j)\exp(i[...+p_jx_{Q_3}+p_ix_{Q_4}+...])=\\
+&i\sum_P'\bigg[A[Q,P]-A[Q',P']\bigg](p_j-p_i)\exp(i[...+p_i x_{Q_3}+p_j x_{Q_4}+...]) +\\
+&i\sum_P'\bigg[A[Q',P]-A[Q,P']\bigg](p_j-p_i)\exp(i[...+p_jx_{Q_3}+p_ix_{Q_4}+...])=\\
 &2c\sum_P' \bigg[A[Q,P]\exp(i[...+p_ix_{Q_3}+p_jx_{Q_4}+...])+\\
 &\ \ \ \ \ \ \ \ \ \ \ \ \ A[Q,P']\exp(i[...+p_jx_{Q_3}+p_ix_{Q_4}+...])\bigg]
 \end{aligned}
@@ -121,5 +121,37 @@ $$
 于是在条件$x_{Q_3}=x_{Q_4}=x$的条件下，我们得到：
 
 $$
-\frac{i}{2}(p_i-p_j)\bigg(A[Q,P]-A[Q',P']+A[Q',P]-A[Q,P']\bigg)=c(A[Q,P]+A[Q,P'])
+\frac{i}{2}(p_j-p_i)\bigg(A[Q,P]-A[Q',P']+A[Q',P]-A[Q,P']\bigg)=c(A[Q,P]+A[Q,P'])
 $$
+
+注意到公式关于$Q,Q'$是对称的，我们可以引入交换算符$P_{Q,Q'}=P_{34}$，以及采用记号$\xi_P=A[Q,P]$，于是可以被简单地整理成：
+
+$$
+\frac{i}{2}(p_j-p_i)(1+P_{34})\bigg(\xi_P-\xi_{P'}\bigg)=c(\xi_P+\xi_{P'})
+$$
+
+进一步：
+
+$$
+\bigg(\frac{i}{2}(p_j-p_i)(1+P_{34})-c\bigg)\xi_P=\bigg(\frac{i}{2}(p_j-p_i)(1+P_{34})+c\bigg)\xi_{P'}
+$$
+
+方程两边同时乘以因子$\bigg(\frac{i}{2}(p_j-p_i)(-1+P_{34})+c\bigg)$:
+
+$$
+\bigg(ic(p_j-p_i)-c^2\bigg)\xi_P=\bigg(ic(p_j-p_i)P_{34}+c^2\bigg)\xi_{P'}
+$$
+
+于是得到:
+
+$$
+\xi_P = \frac{(p_j-p_i)P_{34}-ic}{(p_j-p_i)+ic}\xi_{P'}
+$$
+
+按照杨先生的记号，引入$x_{ij}=ic(p_i-p_j)^{-1}, y_{ij}=1+x_{ij}$，即有：
+
+$$
+\xi_{...ij...}=\xi_{P} = \frac{P_{34}-x_{ji}}{1+x_{ji}}\xi_{P'}=Y_{ji}^{34}\xi_{P'}=Y_{ji}^{34}\xi_{...ji...}
+$$
+
+其中$Y_{ji}^{34}=(y_{ji}^{-1}-1)+y^{-1}_{ji}P_{34}$。
