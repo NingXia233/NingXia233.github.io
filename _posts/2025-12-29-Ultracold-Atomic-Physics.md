@@ -59,33 +59,47 @@ image: cutting.jpg
 考虑系统的参数是周期变化的，借助这一动力学我们可以对电子能带系统进行工程调控。
 
 居高临下，我们一般地考虑$H(t+T)=H(t)$，通常而言系统的演化由
+
 $$
 U(t) = \mathcal{T}\exp(-\frac{i}{\hbar}\int_0^t dt' H(t'))
 $$
+
 刻画， 但对于周期系统，且该周期变化非常快$\omega=T/2\pi$，此时可以为系统引入等效的周期演化算符：
+
 $$
 U(T,\alpha) = \mathcal{T}\exp(-\frac{i}{\hbar}\int_{\alpha T}^{T+\alpha T}dt H(t))=\exp(-\frac{i}{\hbar}H_{eff}T)
 $$
+
 考虑$H_{eff}$的本征值问题可以有效地描述原系统。注意到$H(t)=\sum_n e^{in\omega t} H_n$，而$\hbar\omega$作为特征能量是一个很高的值，可以对$1/\omega$进行展开导出：
+
 $$
 H_{eff}\approx H_0 +\sum_{n=1}^\infty \bigg\{\frac{[H_n,H_{-n}]}{n\hbar\omega}+...\bigg\} + ...
 $$
+
 具体而言，考虑一维运动势场：
+
 $$
 H = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V\cos^2(k(x+f(t)))
 $$
+
 在坐标变换下$x'=x+f(t)$，引入协变导数和规范变换，哈密顿量中将引入等效的规范场结构$A=-mf'(t)$:
+
 $$
 H = \frac{1}{2m}(-i\hbar\partial_x + mf'(t))^2 + V\cos^2(kx)
 $$
+
 如果对Wannier函数进行规范变换$e^{-i\int_{R_j}^r A(r')dr'/\hbar}w(r-R_j)$，在对应的格点模型中等效于在跃迁矩阵上乘以相位因子$e^{i\int_{R_j}^{R_i} A(r')dr'J_{ij}}$，这就是Peierls替换。于是考虑周期运动的势场，格点模型对应有：
+
 $$
 H = -J\sum_{\langle ij\rangle} (e^{if_0\cos\omega t}b^\dagger_i b_j + h.c.)
 $$
+
 对周期函数进行傅里叶展开得到贝塞尔函数：
+
 $$
 H=-J\sum_{\langle ij\rangle}\sum_n (i^n)B_n(f_0)b_i^\dagger b_j e^{in\omega t} +h.c.)
 $$
+
 从而利用$H_n$组合，我们可以实现不同的能带进行电子结构的调控。
 
 
@@ -106,8 +120,11 @@ $$
 g(t) = g_c (1-\frac{t}{\tau_R})
 $$
 其中$\tau_R$是扫描时间。由于弛豫时间发散，系统的非平衡动力学将经历不同的阶段：
+
 (1)绝热阶段（远离临界点），此时弛豫速率足够快，系统可以跟上参数的变化速率并处于瞬时平衡态
+
 (2)冻结阶段（接近临界点），此时弛豫时间发散，弛豫速率趋于0，系统无法跟上参数变化(临界条件$\tau\sim|\epsilon/\dot{\epsilon}|\Rightarrow \epsilon\sim \tau_Q^{-1/(1+z\nu)}$)，仿佛被冻结，而关联长度也对应地被冻结在相应的长度$\xi\sim|\epsilon|^{-\nu}\sim \tau_R^{\nu/(1+z\nu)}$
+
 (3)解冻阶段（穿越临界点），此时弛豫速率恢复，系统解冻，但由于此前关联长度被冻结，系统被划分为一些区域，不同区域之间将可能形成畴壁缺陷，缺陷密度$n\sim\xi^{-d}\sim\tau_R^{-d\nu/(1+z\nu)}$
 
 这就是Kibble-Zurek机制。
