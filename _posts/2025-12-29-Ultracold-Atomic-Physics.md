@@ -80,13 +80,13 @@ $$
 借助变分原理，对于具有短程相互作用的玻色系统可以导出GP方程:
 
 $$
-(-\frac{\hbar^2\nable^2}{2m}+V(r))\psi + U|\psi|^2\psi = i\hbar\frac{\partial\psi}{\partial t}
+(-\frac{\hbar^2\nabla^2}{2m}+V(r))\psi + U|\psi|^2\psi = i\hbar\frac{\partial\psi}{\partial t}
 $$
 
 其静态方程为（粒子数守恒给出化学势）：
 
 $$
-(-\frac{\hbar^2\nable^2}{2m}+V(r))\psi + U|\psi|^2\psi = i\hbar\frac{\partial\psi}{\partial t}
+(-\frac{\hbar^2\nabla^2}{2m}+V(r))\psi + U|\psi|^2\psi = i\hbar\frac{\partial\psi}{\partial t}
 $$
 
 对于均匀系统$V(r)=0$，场方程的基态有$\mu=Un_0,n_0=|\psi|^2$
