@@ -20,6 +20,12 @@ highlighter:         rouge
 permalink:           /:title
 plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
 
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  math_engine_opts:
+    preview: false
+
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
 title:		           'Ning'
 description:	       'Personal Blog'
