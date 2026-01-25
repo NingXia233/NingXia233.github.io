@@ -218,12 +218,37 @@ BKT相变被称作拓扑的相变，因为涡旋激发是一种拓扑激发，�
 
 我们可以将这些内容整理成表格：
 
-|   | Semimetal | Topological insulator |
-|-------|-------|-------|
-| Mapping | From surface $S_{d-1}$ in BZ to BWF space| From entire BZ $T_d$ to BWF space |
-| Example in 1D |  | $\Pi_1(S^1)$: SSH model(winding number) |
-| Example in 2D | $\Pi_1(S^1)$: Dirac semimetal (Winding number) | $\Pi_2(S^2)$: Haldane model (Chern number)|
-| Example in 3D | $\Pi_2(S^2)$: Weyl semimetal (Chern number) | |
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th>Semimetal</th>
+			<th>Topological insulator</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Mapping</td>
+			<td>From surface $S_{d-1}$ in BZ to BWF space</td>
+			<td>From entire BZ $T_d$ to BWF space</td>
+		</tr>
+		<tr>
+			<td>Example in 1D</td>
+			<td></td>
+			<td>$\Pi_1(S^1)$: SSH model(winding number)</td>
+		</tr>
+		<tr>
+			<td>Example in 2D</td>
+			<td>$\Pi_1(S^1)$: Dirac semimetal (Winding number)</td>
+			<td>$\Pi_2(S^2)$: Haldane model (Chern number)</td>
+		</tr>
+		<tr>
+			<td>Example in 3D</td>
+			<td>$\Pi_2(S^2)$: Weyl semimetal (Chern number)</td>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
 
 在这些例子中，我们要求元胞中至少存在着两个格点，这样哈密顿量就可以被改写成pseudo-spin的形式：
 
@@ -364,13 +389,42 @@ $\langle \xi(t)\xi^\dagger(t')\rangle = 2\nu\delta(t-t')$，这些关系恰好�
 
 开放系统的描述来自于和封闭系统的对比，我们列出以下表格：
 
-| System  | Closed System | Open System |
-|-------|-------|-------|
-| Hamiltonian | Herimitian $H^\dagger = H$ | Non-Hermitian with Langevin Force $H=H_0 - i\nu O^\dagger O + O^\dagger \xi + O \xi^\dagger$ |
-| Heisenberg Picture | $W(t) = U^\dagger(t) W U(t)$ | $W(t)=\langle U^\dagger(t) W U(t)\rangle_\xi$ |
-| Schrodinger Picture| Schrodinger equation: $i\hbar\frac{\partial \psi}{\partial t}=H\psi$ | Lindbladian equation: $\frac{d\rho}{dt}=-i[H_0,\rho]-\nu\{\rho,O^\dagger O \}+2\nu O \rho O^\dagger$|
-|Spectrum | Eigenvalues of $H$: lowest $E_0$ for ground state | Lindblad spectrum $L$: $\alpha_l-i\beta_l$, $\beta_l=0$ for steady state
-|Symmetry| $U\psi=e^{i\theta}\psi$ | Strong symmetry $U\rho = e^{i\theta}\rho$, Weak symmetry $U\rho U^\dagger = \rho$ |
+<table>
+	<thead>
+		<tr>
+			<th>System</th>
+			<th>Closed System</th>
+			<th>Open System</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Hamiltonian</td>
+			<td>Herimitian $H^\dagger = H$</td>
+			<td>Non-Hermitian with Langevin Force $H=H_0 - i\nu O^\dagger O + O^\dagger \xi + O \xi^\dagger$</td>
+		</tr>
+		<tr>
+			<td>Heisenberg Picture</td>
+			<td>$W(t) = U^\dagger(t) W U(t)$</td>
+			<td>$W(t)=\langle U^\dagger(t) W U(t)\rangle_\xi$</td>
+		</tr>
+		<tr>
+			<td>Schrodinger Picture</td>
+			<td>Schrodinger equation: $i\hbar\frac{\partial \psi}{\partial t}=H\psi$</td>
+			<td>Lindbladian equation: $\frac{d\rho}{dt}=-i[H_0,\rho]-\nu\{\rho,O^\dagger O \}+2\nu O \rho O^\dagger$</td>
+		</tr>
+		<tr>
+			<td>Spectrum</td>
+			<td>Eigenvalues of $H$: lowest $E_0$ for ground state</td>
+			<td>Lindblad spectrum $L$: $\alpha_l-i\beta_l$, $\beta_l=0$ for steady state</td>
+		</tr>
+		<tr>
+			<td>Symmetry</td>
+			<td>$U\psi=e^{i\theta}\psi$</td>
+			<td>Strong symmetry $U\rho = e^{i\theta}\rho$, Weak symmetry $U\rho U^\dagger = \rho$</td>
+		</tr>
+	</tbody>
+</table>
 
 借助类比，在封闭系统中我们研究系统的薛定谔方程和哈密顿量$H$的本征值问题，而在开放系统中我们研究Lindbladian方程。其中由于密度矩阵方程的求解并不方便，我们可以通过Operator-to-State关系:
 $$

@@ -25,6 +25,7 @@ kramdown:
   math_engine: mathjax
   math_engine_opts:
     preview: false
+  tables: false
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
 title:		           'Ning'
