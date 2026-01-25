@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: "圣诞玲奈"
 date: 2025-10-21
 image: /assets/img/gallery/sample2.jpg
