@@ -70,3 +70,4 @@ $$
 
 **从Schmidt分解到Tensor-Train**
 
+通过Schmidt分解我们看到，每一个局域张量$A^i_{\alpha\beta}[s_i]$刻画了局域模式/局域希尔伯特空间$\mathcal{H}_i$与周围环境的纠缠。
