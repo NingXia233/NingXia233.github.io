@@ -96,9 +96,15 @@ $$
 
 我们也可以对环境基底进行规范变换，相应地局域张量会经历对应的规范变换：$A^i[s_i]\mapsto A^i_G[s_i] = G^{-1}(i-1)A^i[s_i] G(i)$
 
-由于Tensor-Train/MPS结构的特殊性，我们可以找到所谓的“正则条件”来固定局域张量在环境基底上的规范自由度。（如图所示，图片来源PhysRevB.94.165116的FIG. 1.）
+由于Tensor-Train/MPS结构的特殊性，我们可以找到所谓的“正则条件”来固定局域张量在环境基底上的规范自由度。其含义为左右的环境基底各自构成对应的正交基底。（如图所示，图片来源PhysRevB.94.165116的FIG. 1.）
 
 ![alt text](https://raw.githubusercontent.com/NingXia233/NingXia233.github.io/gh-pages/_posts/post_image/image.png)
 
 
 我们也可以把局域模式$i$吸收到一个环境中，这样就转变成了Schmidt分解所处理的两个子系统的情况。例如将模式$i$吸收到左环境中得到$\vert\Phi_{L,\alpha}^{[1:i]}\rangle=\vert\Phi_{L,\alpha}^{[1:i-1]}\rangle\vert s_i\rangle$，在程序上即把张量元的指标$\alpha, s_i$进行`group`操作。
+
+
+---
+
+**局域空间的投影算符**
+
