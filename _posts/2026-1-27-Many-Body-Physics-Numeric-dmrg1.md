@@ -96,7 +96,7 @@ $$
 
 我们也可以对环境基底进行规范变换，相应地局域张量会经历对应的规范变换：$A^i[s_i]\mapsto A^i_G[s_i] = G^{-1}(i-1)A^i[s_i] G(i)$
 
-由于Tensor-Train/MPS结构的特殊性，我们可以找到所谓的“正则条件”来固定局域张量在环境基底上的规范自由度。其含义为左右的环境基底各自构成对应的正交基底。（如图所示，图片来源PhysRevB.94.165116的FIG. 1.）
+由于Tensor-Train/MPS结构的特殊性，我们可以找到所谓的“正则条件”来固定局域张量在环境基底上的规范自由度。其含义为左右的环境基底各自构成对应的正交基底。（如图所示，图片来源：PhysRevB.94.165116）
 
 ![alt text](https://raw.githubusercontent.com/NingXia233/NingXia233.github.io/gh-pages/_posts/post_image/image.png)
 
