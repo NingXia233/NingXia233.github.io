@@ -68,6 +68,36 @@ $$
 
 ---
 
-**从Schmidt分解到Tensor-Train**
+**从Schmidt分解到Tensor-Train，再到Tensor Network**
 
-通过Schmidt分解我们看到，每一个局域张量$A^i_{\alpha\beta}[s_i]$刻画了局域模式/局域希尔伯特空间$\mathcal{H}_i$与周围环境的纠缠。
+通过Schmidt分解我们看到，每一个局域张量$A^i_{\alpha\beta}[s_i]$刻画了局域模式/局域希尔伯特空间$\mathcal{H}_i$与周围环境的纠缠。对于Tensor-Train或者开边界的MPS，把局域模式/格点$i$去除后得到的环境可以被区分成两个独立的部分：左环境和右环境。
+
+具体而言，分别进行其他局域张量的缩并，我们可以得到：
+
+$$
+|\Phi^{[1:i-1]}_{L,\alpha}\rangle = \sum_{\gamma\eta...}A^{1}_{\gamma\eta}[s_1] A^2_{\eta...}[s_2]...A^{i-1}_{...\alpha}[s_{i-1}]|s_1,s_2,...,s_{i-1}\rangle
+$$
+
+$$
+|\Phi_{R,\beta}^{[i+1:N]}\rangle = \sum_{\gamma\eta...}A^{i+1}_{\beta\gamma}[s_{i+1}]A^{i+2}_{\gamma\eta}[s_{i+2}]...|s_{i+1},s_{i+2},...\rangle
+$$
+
+这样系统的波函数就可以在局域格点的表象下进行展开：
+
+$$
+|\Psi\rangle = \sum_{\alpha,s_i,\beta}A^i_{\alpha\beta}[s_i] |\Phi_{L,\alpha}^{[1:i-1]}\rangle |s_i\rangle | \Phi^{[i+1:N]}_{R,\beta}\rangle
+$$
+
+局域张量$A^i_{\alpha\beta}[s_i]$即局域模式/格点表象下的波函数。
+
+***可以去问这样一个问题：难道仅需要了解局域模式/格点下的波函数就可以知道真个系统的行为了吗？当然不是，我们还需要知道对应的环境纠缠的基矢$|\Phi^{[1:i-1]}_{L,\alpha}\rangle|\Phi_{R,\beta}^{[i+1:N]}\rangle$，而一个看起来不太平凡的事实是知道所有其他局域格点表象下的波函数就知道了环境的纠缠基矢***
+
+波函数具有规范自由度，其性质深刻地反映在了局域张量的规范变换中。我们对局域基底$|s_i\rangle$进行规范变换$U[s_i]^\dagger|s_i\rangle$，对应的波函数/局域张量也要进行相应的变换$\sum_{s_i} A^i_{\alpha\beta}[s_i]U[s_i]$
+
+我们也可以对环境基底进行规范变换，相应地局域张量会经历对应的规范变换：$A^i[s_i]\mapsto A^i_G[s_i] = G^{-1}(i-1)A^i[s_i] G(i)$
+
+由于Tensor-Train/MPS结构的特殊性，我们可以找到所谓的“正则条件”来固定局域张量在环境基底上的规范自由度。（如图所示，图片来源PhysRevB.94.165116的FIG. 1.）
+
+![alt text](post_image/image.png)
+
+
