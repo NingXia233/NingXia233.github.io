@@ -101,4 +101,4 @@ $$
 ![alt text](https://raw.githubusercontent.com/NingXia233/NingXia233.github.io/gh-pages/_posts/post_image/image.png)
 
 
-我们也可以把局域模式$i$吸收到一个环境中，这样就转变成了Schmidt分解所处理的两个子系统的情况。例如将模式$i$吸收到左环境中得到$\vert\Phi_{L,\alpha}^{[1:i]}\rangle=\vert\Phi_{L,\alpha}^{[1:i-1]}\rangle\vert s_i\rangle$，在程序上即把张量元的指标$\alpha，s_i$进行`group`操作。
+我们也可以把局域模式$i$吸收到一个环境中，这样就转变成了Schmidt分解所处理的两个子系统的情况。例如将模式$i$吸收到左环境中得到$\vert\Phi_{L,\alpha}^{[1:i]}\rangle=\vert\Phi_{L,\alpha}^{[1:i-1]}\rangle\vert s_i\rangle$，在程序上即把张量元的指标$\alpha, s_i$进行`group`操作。
