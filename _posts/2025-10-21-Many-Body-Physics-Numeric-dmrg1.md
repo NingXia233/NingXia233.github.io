@@ -98,6 +98,6 @@ $$
 
 由于Tensor-Train/MPS结构的特殊性，我们可以找到所谓的“正则条件”来固定局域张量在环境基底上的规范自由度。（如图所示，图片来源PhysRevB.94.165116的FIG. 1.）
 
-![alt text](post_image/image.png)
+![alt text]({{ site.baseurl }}/_posts/post_image/image.png)
 
 

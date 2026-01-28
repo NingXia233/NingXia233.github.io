@@ -54,3 +54,6 @@ comments:
 collections:
   gallery:
     output: true
+
+include:
+  - "_posts/post_image"
