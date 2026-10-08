@@ -206,7 +206,7 @@ $$
 $$
 \begin{aligned}
 &(A-\alpha)(B-\gamma)(A-\beta)-(B-\beta)(A-\gamma)(B-\alpha)\\
-&\qquad=\big[\alpha\beta-\gamma(\alpha+\beta)\big](A-B)=0.
+&\qquad=\big[\gamma(\alpha+\beta)-\alpha\beta\big](A-B)=0.
 \end{aligned}
 $$
 
