@@ -5,8 +5,8 @@ layout: default
 <div>
   <h1>欢迎来到我的主页</h1>
   <p>你好，我是夏宁。很高兴你能够发现我的GitHub空间。</p>
-  <p>你可以在“Research”页面了解我的学术工作，或在“Notes”中看到我的最新学习笔记，另外，我还会偷偷地在“Novel”中分享我写的小说</p>
-  <p>如果你喜欢我的内容，欢迎在评论区留下你的脚印👣！（P.S.: 不好的评论我会删除😏）</p>
+  <p>你可以在 <a href="{{ '/research.html' | relative_url }}">Research</a> 了解我的学术工作，在 <a href="{{ '/notes.html' | relative_url }}">Notes</a> 阅读学习笔记，也可以去 <a href="{{ '/novel.html' | relative_url }}">Novel</a> 看看我写的故事。</p>
+  <p>欢迎到<a href="{{ '/guestbook/' | relative_url }}">留言板</a>留下你的脚印👣。</p>
 </div>
 
 <hr>
@@ -14,16 +14,17 @@ layout: default
 <h2>最新文章</h2>
 {% for post in paginator.posts %}
   <div class="posts-container">
-    <h1>
-      <a href="{{ site.github.url }}{{ post.url }}">{{ post.title }}</a>
-    </h1>
+    <h2>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </h2>
     {% if post.image %}
       <div class="thumbnail-container">
-        <a href="{{ site.github.url }}{{ post.url }}"><img src="{{ site.github.url }}/assets/img/{{ post.image }}"></a>
+        <a href="{{ post.url | relative_url }}"><img{% if post.image contains '/covers/' %} class="note-cover"{% endif %} src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: '' | escape }}" loading="lazy" decoding="async"{% if post.image_width and post.image_height %} width="{{ post.image_width }}" height="{{ post.image_height }}"{% endif %}></a>
       </div>
     {% endif %}
     <p>
-      {{ post.content | strip_html | truncate: 350 }} <a href="{{ site.github.url }}{{ post.url }}">Read more</a>
+      {% if post.description %}{{ post.description | escape }}{% endif %}
+      <a href="{{ post.url | relative_url }}">阅读全文</a>
       <span class="post-date"><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date_to_string }} - <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</span>
     </p>
   </div>

@@ -3,6 +3,11 @@
 */
 
 body {
+  min-height: 100vh;
+  background-color: $paper-color;
+  background-image:
+    radial-gradient(ellipse at top, rgba(255, 250, 235, 0.35), transparent 70%),
+    linear-gradient(90deg, rgba(105, 73, 38, 0.05), transparent 15%, transparent 85%, rgba(105, 73, 38, 0.05));
   font-family: $serif-font-family;
   font-size: 18px;
   color: $body-color;

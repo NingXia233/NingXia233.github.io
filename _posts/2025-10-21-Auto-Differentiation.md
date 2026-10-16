@@ -2,16 +2,20 @@
 layout: post
 title: "机器学习笔记：概论与自动微分"
 author: "Ning Xia"
+description: "从机器学习的基本分类出发，认识计算图与自动微分。"
 categories: notes
 tags: [documentation]
-image: cutting.jpg
+image: /assets/img/covers/automatic-differentiation.webp
+image_width: 1672
+image_height: 941
+image_alt: "棕色前向路径与灰绿色回传路径交织的计算图"
 ---
 
 ***创作声明：这一部分的笔记整理自清华大学物理系罗迪老师的课堂讲授内容，经过笔者理解整理后记录在此***
 
 机器学习或者人工智能有两种主要的分类方式，按照目的来划分，可以分为：
 - 监督学习 Supervised Learning: 其主要解决的是分类问题(Classification)，即对于一组数据我们需要判断它是否属于某一选定的类别。
-- 非监督学习 Unsupervised Learning: 其主要解决的问题有两大类，第一类是聚类问题(Clustering)，即一组数据可以被分为多少可能的种类；第二类是生成模型(Generative modeling)，其任务非常像统计力学的逆问题，即通过学习数据集得到背后的统计概率$P(x)$，现在的主流有：自回归模型(Autoregressive Model), 流模型(Flow-Based Model)以及扩散模型(Diffusion Model)
+- 非监督学习 Unsupervised Learning: 其主要解决的问题有两大类，第一类是聚类问题(Clustering)，即一组数据可以被分为多少可能的种类；第二类是生成模型(Generative modeling)，其任务非常像统计力学的逆问题，即通过学习数据集得到背后的统计概率$$P(x)$$，现在的主流有：自回归模型(Autoregressive Model), 流模型(Flow-Based Model)以及扩散模型(Diffusion Model)
 - 强化学习 Reinforcement Learning：强化学习的目标是在与环境的交互过程中学习一个最优策略。其核心框架是马尔可夫决策过程(Markov Decision Process)，这一过程在数学上与非平衡统计力学有着非常深刻的联系。
 
 而如果按照理论框架来区分，也可以被分为以下三大类：

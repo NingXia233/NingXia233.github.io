@@ -1,0 +1,16 @@
+---
+layout: page
+title: 留言板
+permalink: /guestbook/
+math: false
+---
+
+{% assign repository_url = 'https://github.com/' | append: site.comments.repository %}
+<p>欢迎来我的小天地坐坐。关于物理、学习、写作，或只是打个招呼，都可以在这里留下想法。</p>
+<p>本站使用 GitHub Discussions 保存公开留言。点击下方链接可以查看大家的留言，登录 GitHub 后可以新建话题，或在已有话题下回复。</p>
+<p>
+  <a href="{{ repository_url }}/discussions">查看留言与回复</a>
+  · <a href="{{ repository_url }}/discussions/new?title={{ '[留言板] ' | uri_escape }}">写一条新留言</a>
+</p>
+<p>如果想讨论某篇文章，请使用文章底部的留言入口，方便找到对应内容。讨论中也可以使用 GitHub 支持的 LaTeX 公式。</p>
+<p>留言会公开展示，请勿填写私人联系方式等个人信息。欢迎友善交流。</p>

@@ -1,0 +1,19 @@
+{% if site.comments.enabled and page.comments != false %}
+  {% assign repository_url = 'https://github.com/' | append: site.comments.repository %}
+  {% capture discussion_query %}in:title "{{ page.title }}"{% endcapture %}
+  {% capture message_title %}[文章留言] {{ page.title }}{% endcapture %}
+  {% capture message_body %}文章：{{ page.url | absolute_url }}
+
+---
+
+请在这里写下你的想法。{% endcapture %}
+  <aside class="guestbook" aria-labelledby="comments-heading">
+    <h2 id="comments-heading">文章留言</h2>
+    <p>欢迎交流。留言保存在本站 GitHub 仓库的 Discussions 中，登录 GitHub 后即可参与。</p>
+    <p>
+      <a href="{{ repository_url }}/discussions?discussions_q={{ discussion_query | strip | uri_escape | escape }}">查看这篇文章的留言</a>
+      · <a href="{{ repository_url }}/discussions/new?title={{ message_title | strip | uri_escape | escape }}&amp;body={{ message_body | strip | uri_escape | escape }}">写下留言</a>
+      · <a href="{{ '/guestbook/' | relative_url }}">留言板</a>
+    </p>
+  </aside>
+{% endif %}

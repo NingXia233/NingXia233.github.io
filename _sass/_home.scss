@@ -8,6 +8,20 @@
   list-style: none;
 }
 
+.posts-container h2 {
+  font-size: 2rem;
+}
+
+.posts-container h2 a {
+  text-decoration: none;
+}
+
+@media (max-width: $elements-responsive-width) {
+  .posts-container h2 {
+    font-size: 1.5rem;
+  }
+}
+
 /*
   Thumbnail
 */
@@ -22,6 +36,11 @@
 .thumbnail-container img{
   margin-top: -11.5%;
   margin-bottom: -11.5%;
+}
+
+.thumbnail-container .note-cover {
+  display: block;
+  margin: 0;
 }
 
 /*

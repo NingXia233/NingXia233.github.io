@@ -1,288 +1,97 @@
-# Lagrange
+# Ning 的个人主页
 
-Lagrange is a minimalist Jekyll theme for running a personal blog or site for free through [Github Pages](https://pages.github.com/), or on your own server. Everything that you will ever need to know about this Jekyll theme is included in the README below, which you can also find in [the demo site](https://lenpaul.github.io/Lagrange/). For a guide on how to deploy a Jekyll site using GitHub Pages, please check out [this article](https://paulle.ca/jekyll-tutorials/deploy-jekyll-site-github-pages).
+夏宁的个人网站，记录凝聚态物理研究、学习笔记和小说创作。
 
-If you like my work then please consider supporting me with [Ko-fi](https://ko-fi.com/paulle).
+网站：<https://ningxia233.github.io>
 
-![alt text](https://user-images.githubusercontent.com/8409329/32631384-17107870-c56e-11e7-932f-deeb7c12e4db.png "Lagrange Demo Image")
+## 内容与目录
 
-## Notable features
+- `_posts/`：学习笔记和小说，分别使用 `categories: notes` 和 `categories: novel`。
+- `menu/`：关于我、研究、归档、画廊和留言板。
+- `_gallery/`、`assets/`：画廊内容、图片和样式。
+- `_config.yml`：站点信息、构建设置和留言仓库。
+- `_data/settings.yml`：导航、社交链接和界面文字。
+- `_includes/math.html`：MathJax 配置；`_sass/_post.scss`：公式排版。
 
-* Compatible with GitHub Pages.
+笔记封面位于 `assets/img/covers/`，是一组以旧纸张、墨线和低饱和色彩呈现的生成插画。站点使用 WebP 文件减少加载量；文章 front matter 中的 `image` 填写完整站内路径（例如 `/assets/img/covers/tensor-networks.webp`），`image_alt` 提供图片说明，`image_width` 和 `image_height` 记录尺寸，避免图片加载时页面跳动。
 
-* Support for Jekyll's built-in Sass/SCSS preprocessor and data files for making customizing easier.
+## 本地开发
 
-* [Google Analytics](https://www.google.com/analytics/) support.
+需要 Ruby、Bundler 和编译 Ruby 原生扩展的工具链。在仓库根目录运行：
 
-* Commenting support powered by [Disqus](https://disqus.com/).
-
-* Optimized for search engines.
-
-* LaTeX support through [MathJax](https://www.mathjax.org/).
-
-## Table of Contents
-
-1. [Introduction](#introduction)
-   1. [What is Jekyll](#what-is-jekyll)
-   2. [Never Used Jeykll Before?](#never-used-jekyll-before)
-2. [Installation](#installation)
-   1. [GitHub Pages Installation](#github-pages-installation)
-   2. [Local Installation](#local-installation)
-   3. [Directory Structure](#directory-structure)
-   4. [Starting From Scratch](#starting-from-scratch)
-3. [Configuration](#configuration)
-   1. [Sample Posts](#sample-posts)
-   2. [Site Variables](#site-variables)
-   3. [Adding Menu Pages](#adding-menu-pages)
-   4. [Posts](#posts)
-   5. [Layouts](#layouts)
-   6. [YAML Front Block Matter](#yaml-front-block-matter)
-4. [Features](#features)
-   1. [Design Considerations](#design-considerations)
-   2. [Disqus](#disqus)
-   3. [Google Analytics](#google-analytics)
-   4. [RSS Feeds](#rss-feeds)
-   5. [Social Media Icons](#social-media-icons)
-   6. [MathJax](#mathjax)
-   7. [Syntax Highlighting](#syntax-highlighting)
-   8. [Markdown](#markdown)
-5. [Everything Else](#everything-else)
-6. [Contributing](#Contributing)
-7. [Questions?](#questions)
-8. [Credits](#credits)
-9. [License](#license)
-
-## Introduction
-
-Lagrange is a Jekyll theme that was built to be 100% compatible with [GitHub Pages](https://pages.github.com/). If you are unfamiliar with GitHub Pages, you can check out [their documentation](https://help.github.com/categories/github-pages-basics/) for more information. [Jonathan McGlone's guide](http://jmcglone.com/guides/github-pages/) on creating and hosting a personal site on GitHub is also a good resource.
-
-### What is Jekyll?
-
-Jekyll is a simple, blog-aware, static site generator for personal, project, or organization sites. Basically, Jekyll takes your page content along with template files and produces a complete website. For more information, visit the [official Jekyll site](https://jekyllrb.com/docs/home/) for their documentation. Codecademy also offers a great course on [how to deploy a Jekyll site](https://www.codecademy.com/learn/deploy-a-website) for complete beginners.
-
-### Never Used Jekyll Before?
-
-The beauty of hosting your website on GitHub is that you don't have to actually have Jekyll installed on your computer. Everything can be done through the GitHub code editor, with minimal knowledge of how to use Jekyll or the command line. All you have to do is add your posts to the `_posts` directory and edit the `_config.yml` file to change the site settings. With some rudimentary knowledge of HTML and CSS, you can even modify the site to your liking. This can all be done through the GitHub code editor, which acts like a content management system (CMS).
-
-## Installation
-
-### GitHub Pages Installation
-
-To start using Jekyll right away with GitHub Pages, [fork the Lagrange repository on GitHub](https://github.com/LeNPaul/Lagrange/fork). From there, you can rename your repository to `USERNAME.github.io`, where `USERNAME` is your GitHub username, and edit the `settings.yml` file in the `_data` folder to your liking. Ensure that you have a branch named `gh-pages`. Your website should be ready immediately at 'http://USERNAME.github.io'. Note: if you are hosting several sites under the same GitHub username, then you will have to use [Project Pages instead of User Pages](https://help.github.com/articles/user-organization-and-project-pages/) - just change the repository name to something other than 'http://USERNAME.github.io'.
-
-Head over to the `_posts` directory to view all the posts that are currently on the website, and to see examples of what post files generally look like. You can simply just duplicate the template post and start adding your own content.
-
-### Local Installation
-
-For a full local installation of Lagrange, [download your own copy of Lagrange](https://github.com/LeNPaul/Lagrange/archive/gh-pages.zip) and unzip it into it's own directory. From there, open up your favorite command line tool, enter `bundle install`, and then enter `jekyll serve`. Your site should be up and running locally at [http://localhost:4000](http://localhost:4000).
-
-### Directory Structure
-
-If you are familiar with Jekyll, then the Lagrange directory structure shouldn't be too difficult to navigate. The following some highlights of the differences you might notice between the default directory structure. More information on what these folders and files do can be found in the [Jekyll documentation site](https://jekyllrb.com/docs/structure/).
-
-```bash
-Lagrange/
-├── _data                      # Data files
-|  └── settings.yml            # Theme settings and custom text
-├── _includes                  # Theme includes
-├── _layouts                   # Theme layouts (see below for details)
-├── _posts                     # Where all your posts will go
-├── assets                     # Style sheets and images are found here
-|  ├── css                     # Style sheets go here
-|  |  └── main.css             # Main CSS file
-|  |  └── syntax.css           # Style sheet for code syntax highlighting
-|  └── img                     # Images go here
-├── menu                       # Menu pages
-├── _config.yml                # Site build settings
-├── Gemfile                    # Ruby Gemfile for managing Jekyll plugins
-├── index.md                   # Home page
-├── LICENSE.md                 # License for this theme
-├── README.md                  # Includes all of the documentation for this theme
-└── rss-feed.xml               # Generates RSS 2.0 file which Jekyll points to
+```sh
+bundle install
+bundle exec jekyll serve
 ```
 
-### Starting From Scratch
+构建与回归检查：
 
-To completely start from scratch, simply delete all the files in the `_posts`, `assets/img`, and `menu` folder, and add your own content. You may also replace the `README.md` file with your own README. Everything in the `_data` folder and `_config.yml` file can be edited to suit your needs. You may also change the `favicon.ico` file to your own favicon.
-
-## Configuration
-
-### Sample Posts
-
-Visit the [the demo site](https://lenpaul.github.io/Lagrange/) to find sample posts that show what different types of text formatting look like. You can find these posts in the `_posts` folder, which show what the best practices for setting up your own site are.
-
-### Site Variables
-
-To change site build settings, edit the `_config.yml` file found in the root of your repository, which you can tweak however you like. More information on configuration settings and plugins can be found on [the Jekyll documentation site](https://jekyllrb.com/docs/configuration/). This is also where you will be able to customize the title, description, and the author/owner of your site.
-
-If you are hosting your site on GitHub Pages, then committing a change to the `_config.yml` file will force a rebuild of your site with Jekyll. Any changes made should be viewable soon after. If you are hosting your site locally, then you must run `jekyll serve` again for the changes to take place.
-
-In the `settings.yml` file found in the `_data` folder, you will be able to customize your site settings, such as setting Disqus comments, Google Analytics, what shows up in your menu, and social media information.
-
-### Adding Menu Pages
-
-The menu pages are found in the `menu` folder in the root directory, and can be added to your menu in the `settings.yml` file.
-
-### Posts
-
-You will find example posts in your `_posts` directory. Go ahead and edit any post and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
-
-To add new posts, simply add a file in the `_posts` directory that follows the convention of `YYYY-MM-DD-name-of-post.md` and includes the necessary front matter. Take a look at any sample post to get an idea about how it works. If you already have a website built with Jekyll, simply copy over your posts to migrate to Lagrange.
-
-### Layouts
-
-There are two main layout options that are included with Lagrange: post and page. Layouts are specified through the [YAML front block matter](https://jekyllrb.com/docs/frontmatter/). Any file that contains a YAML front block matter will be processed by Jekyll. For example:
-
+```sh
+bundle exec jekyll build
+python3 -m unittest discover -s tests -v
 ```
+
+使用已配置的 Codex 云环境时，先运行 `source /workspace/.cloud-setup/activate.sh`，然后用 `ruby /workspace/.cloud-setup/ruby/usr/bin/bundle` 替代上述 `bundle` 命令。
+
+`Gemfile.lock` 当前由仓库忽略；首次安装会生成本地锁文件。已有锁文件时可以使用 `BUNDLE_FROZEN=true bundle install`。`_site/` 和 Jekyll 缓存均为生成文件，无需提交。
+
+## 书写 LaTeX 公式
+
+本站使用 GitHub Pages 支持的 Kramdown 与固定版本的 MathJax 3.2.2。公式先由 Kramdown 保护，再由浏览器排版，避免下划线、花括号和反斜杠被 Markdown 当作普通文本处理。
+
+**行内公式使用 `$$...$$`，前后放在同一段文字中：**
+
+```markdown
+态矢量 $$\lvert\psi\rangle$$ 属于空间 $$\mathcal{H}_i$$。
+集合写成 $$\{s_1, s_2\}$$，张量指标写成 $$Y^{ab}_{ij}$$。
+```
+
+**独立公式的 `$$` 各占一行，并在公式块前后留空行：**
+
+```latex
+$$
+\begin{aligned}
+H &= -\sum_i \frac{\partial^2}{\partial x_i^2}
+     + 2c \sum_{i<j} \delta(x_i-x_j), \\
+H\psi &= E\psi.
+\end{aligned}
+$$
+```
+
+支持 AMS、`mathtools` 和 `braket`，例如 `\ket{\psi}`、`\bra{\phi}`、`\braket{\phi|\psi}`。较长的独立公式可以横向滚动，不会撑宽手机页面。
+
+若使用原始 HTML 表格，在 `<table markdown="1">` 内为含公式的单元格加上 `markdown="span"`，例如 `<td markdown="span">态矢量 $$\ket{\psi}$$</td>`。这样单元格中的公式也会先经过 Kramdown，保持正确的行内排版。
+
+不要直接在 Markdown 中使用单个 `$...$` 或 `\(...\)` 代替上述写法；它们可能在 MathJax 运行前被 Markdown 改写。代码围栏中的公式示例保持原样，不会被排版。普通金额直接写 `$5` 即可。
+
+MathJax 和数学字体通过 jsDelivr 加载，浏览器需要能够访问该 CDN。无需公式的页面可以在 front matter 中设置 `math: false`。
+
+新文章请添加一段**不含公式的纯文本 `description`**，供首页摘要和搜索描述使用。首页不再截取整篇正文，避免截断公式：
+
+```yaml
 ---
 layout: post
-title: "Example Post"
+title: "文章标题"
+author: "Ning Xia"
+categories: notes
+description: "一两句介绍这篇文章的内容。"
 ---
 ```
 
-Examples of what posts looks like can be found in the `_posts` directory, which includes this post you are reading right now. Posts are the basic blog post layout, which includes a header image, post content, author name, date published, social media sharing links, and related posts.
+## 留言板
 
-Pages are essentially the post layout without any of the extra features of the posts layout. An example of what pages look like can be found at the [About](https://lenpaul.github.io/Lagrange/menu/about.html) and [Contacts](https://lenpaul.github.io/Lagrange/menu/contact.html).
+留言保存在本仓库的 [GitHub Discussions](https://github.com/NingXia233/NingXia233.github.io/discussions) 中，无需 LeanCloud、Valine 或自行维护服务器。
 
-In addition to the two main layout options above, there are also custom layouts that have been created for the [home page](https://lenpaul.github.io/Lagrange/) and the [archives page](https://lenpaul.github.io/Lagrange/menu/writing.html). These are simply just page layouts with some [Liquid template code](https://shopify.github.io/liquid/). Check out the `index.html` file in the root directory for what the code looks like.
+- 网站导航中的“留言板”提供公开留言列表和新留言入口。
+- 文章底部按标题查找已有讨论，并提供带文章标题、原文链接的新留言入口。
+- 阅读公开留言不需要登录；发表和回复需要 GitHub 账号。留言会在 GitHub 打开，不会内嵌进本站。
+- 本仓库已启用 Discussions；公开留言入口可用。维护者可以回复、锁定或删除不合适的讨论。
+- `_config.yml` 的 `comments.repository` 控制目标仓库，`comments.enabled: false` 关闭文章留言入口；单篇文章可以设置 `comments: false`。
 
-### YAML Front Block Matter
+这是一种使用 GitHub 保存共享留言的方案。纯静态网页自身无法持久保存所有访客共享的留言；浏览器本地存储也无法替代公开留言板。若以后需要在页面内直接阅读和回复，可再接入 Giscus；这需要安装 Giscus GitHub App 并选择讨论分类。
 
-The recommended YAML front block is:
+## 部署与主题来源
 
-```
----
-layout:
-title:
-author:
-categories:
-tags: []
-image:
----
-```
+站点通过本仓库的 `gh-pages` 分支部署到 GitHub Pages，保留 Jekyll 原生构建方式，无需自定义构建插件。修改后可在 GitHub 的 Pages 设置中检查部署状态。
 
-`layout` specifies which layout to use, `title` is the page or post title, `categories` can be used to better organize your posts, `tags` are used when generating related posts based on the topic of the post, and `image` specifies which images to use. Have a look at some posts in the `_posts` directory to see how these variables are set.
-
-## Features
-
-### Design Considerations
-
-Lagrange was designed to be a minimalist theme in order for the focus to remain on your content. For example, links are signified mainly through an underline text-decoration, in order to maximize the perceived affordance of clickability (I originally just wanted to make the links a darker shade of grey).
-
-### Disqus
-
-Lagrange supports comments at the end of posts through [Disqus](https://disqus.com/). In order to activate Disqus commenting, set `disqus.comments` to true in the `_data/settings.yml` file. If you do not have a Disqus account already, you will have to set one up, and create a profile for your website. You will be given a `disqus_shortname` that will be used to generate the appropriate comments sections for your site. More information on [how to set up Disqus](http://www.perfectlyrandom.org/2014/06/29/adding-disqus-to-your-jekyll-powered-github-pages/).
-
-### Google Analytics
-
-It is possible to track your site statistics through [Google Analytics](https://www.google.com/analytics/). Similar to Disqus, you will have to create an account for Google Analytics, and enter the correct Google ID for your site under `google-ID` in the `settings.yml` file. More information on [how to set up Google Analytics](https://michaelsoolee.com/google-analytics-jekyll/). Note: If you are not using Google Analytics, please change `google-ID` to an empty string.
-
-### RSS Feeds
-
-Atom is supported by default through [jekyll-feed](https://github.com/jekyll/jekyll-feed). With jekyll-feed, you can set configuration variables such as 'title', 'description', and 'author', in the `_config.yml` file.
-
-RSS 2.0 is also supported through [RSS auto-discovery](http://www.rssboard.org/rss-autodiscovery). The `rss-feed.xml` file (based on the template found at [jekyll-rss-feeds](https://github.com/snaptortoise/jekyll-rss-feeds)) that the feed path points to when using RSS 2.0 is automatically generated based on the appropriate configuration variables found in `_data/settings.yml`.
-
-To use RSS 2.0, ensure the following is done:
-
-* Uncomment the last two lines in the `_config.yml` file.
-
-* In `_data/settings.yml`, under 'social', comment out the rss-square that points to `feed.xml`, and uncomment the rss-square that points to `rss-feed.xml`.
-
-* In `_includes/head.html`, comment out `{% feed_meta %}` and uncomment the line under the RSS 2.0 comment.
-
-### Social Media Icons
-
-All social media icons are courtesy of [Font Awesome](http://fontawesome.io/). You can change which icons appear, as well as the account that they link to, in the `settings.yml` file in the `_data` folder.
-
-### MathJax
-
-Lagrange comes out of the box with [MathJax](https://www.mathjax.org/), which allows you to display mathematical equations in your posts through the use of [LaTeX](http://www.andy-roberts.net/writing/latex/mathematics_1).
-
-### Syntax Highlighting
-
-Lagrange provides syntax highlighting through [fenced code blocks](https://help.github.com/articles/creating-and-highlighting-code-blocks/). Syntax highlighting allows you to display source code in different colors and fonts depending on what programming language is being displayed. You can find the full list of supported programming languages [here](https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers). Another option is to embed your code through [Gist](https://en.support.wordpress.com/gist/).
-
-### Markdown
-
-As always, Jekyll offers support for GitHub Flavored Markdown, which allows you to format your posts using the [Markdown syntax](https://guides.github.com/features/mastering-markdown/). Examples of these text formatting features can be seen below. You can find this post in the `_posts` directory as well as the `README.md` file.
-
-## Everything Else
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll's GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: http://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
-
-## Contributing
-
-If you would like to make a feature request, or report a bug or typo in the documentation, then please [submit a GitHub issue](https://github.com/LeNPaul/Lagrange/issues/new). If you would like to make a contribution, then feel free to [submit a pull request](https://help.github.com/articles/about-pull-requests/) - as a bonus, I will credit all contributors below! If this is your first pull request, it may be helpful to read up on the [GitHub Flow](https://guides.github.com/introduction/flow/) first.
-
-Lagrange has been designed as a base for users to customize and fit to their own unique needs. Please keep this in mind when requesting features and/or submitting pull requests. Some examples of changes that I would love to see are things that would make the site easier to use, or better ways of doing things. Please avoid changes that do not benefit the majority of users.
-
-## Questions?
-
-This theme is completely free and open source software. You may use it however you want, as it is distributed under the [MIT License](http://choosealicense.com/licenses/mit/). If you are having any problems, any questions or suggestions, feel free to [tweet at me](https://twitter.com/intent/tweet?text=My%question%about%Lagrange%is:%&amp;via=paululele), or [file a GitHub issue](https://github.com/lenpaul/lagrange/issues/new).
-
-## Credits
-
-### Creator
-
-#### Paul Le
-
-* [www.lenpaul.com](http://lenpaul.com)
-
-* [Twitter](https://twitter.com/paululele)
-
-* [GitHub](https://github.com/LeNPaul)
-
-### Contributors
-
-* [nikolalukovic](https://github.com/nikolalukovic)
-
-* [gmemstr](https://github.com/gmemstr)
-
-* [lynn9388](https://github.com/lynn9388)
-
-* [robqiao](https://github.com/robqiao)
-
-* [Mauladen](https://github.com/Mauladen)
-
-* [dhanus](https://github.com/dhanus)
-
-* [mlewand](https://github.com/mlewand)
-
-* [Hguimaraes](https://github.com/Hguimaraes)
-
-* [ilhamadun](https://github.com/ilhamadun)
-
-* [brianclemens](https://github.com/brianclemens)
-
-* [leyhline](https://github.com/leyhline)
-
-* [aritra24](https://github.com/aritra24)
-
-* [DuckSoft](https://github.com/DuckSoft)
-
-* [larrylawl](https://github.com/larrylawl)
-
-* [borting](https://github.com/borting)
-
-### Icons + Demo Images
-
-* [Death to Stock](https://deathtothestockphoto.com/)
-
-* [Font Awesome](http://fontawesome.io/)
-
-### Other
-
-* [Jekyll](https://jekyllrb.com/)
-
-* [Free Code Camp](https://www.freecodecamp.org)
-
-* [Khan Academy](https://www.khanacademy.org/)
-
-## License
-
-Open sourced under the [MIT license](https://github.com/LeNPaul/Lagrange/blob/gh-pages/LICENSE.md).
+视觉主题基于 [Lagrange](https://github.com/LeNPaul/Lagrange)，保留其窄栏、衬线字体和简洁布局，使用暖棕色的旧纸张配色。原主题的 MIT 许可与作者版权信息保留在 [LICENSE.md](LICENSE.md)，`lagrange.gemspec` 仍记录主题的原始包信息。本站文章和创作属于各自作者；主题许可不代表原创内容可任意转载。

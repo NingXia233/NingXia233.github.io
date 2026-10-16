@@ -1,15 +1,5 @@
 # Site Build Settings
 
-# Jekyll-paginate-v2 configuration
-#  pagination:
-#   enabled: true
-#   per_page: 5
-#   permalink: '/page/:num/'
-#   title: ':title - page :num of :max'
-#   limit: 0
-#   sort_field: 'date'
-#   sort_reverse: true
-
 # jekyll-paginate configuration
 paginate:            6
 
@@ -30,26 +20,21 @@ kramdown:
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
 title:		           'Ning'
 description:	       'Personal Blog'
-author:              'the Jekyll theme Lagrange'
+author:              'Ning Xia'
+url:                 'https://ningxia233.github.io'
+baseurl:             ''
+lang:                'zh-CN'
 
-# Comments
+# Public messages are stored in this repository; no comment server is needed.
 comments:
-  provider: valine
-  valine:
-    app_id: StwOUiVAVTVdsND5kOqvM7dy-gzGzoHsz # your app_id
-    app_key: TqViHH2IJYdOvjUm5H6eZJcn # your app_key
-    placeholder: Add your comments here...
-    avatar: mp
-    meta: [nick, mail, link]
-    pageSize: 10
-    lang: en
-    visitor: false
-    highlight: true
-    recordIP: false
+  enabled: true
+  repository: NingXia233/NingXia233.github.io
 
-# RSS 2.0 can be used instead of Atom by uncommenting following two lines
-#feed:
-#  path: rss-feed.xml
+exclude:
+  - README.md
+  - LICENSE.md
+  - lagrange.gemspec
+  - tests
 
 collections:
   gallery:

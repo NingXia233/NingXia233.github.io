@@ -29,3 +29,43 @@
 .related-posts a {
   text-decoration: none;
 }
+
+// Keep the Lagrange reading column; scroll equations instead of the whole page.
+article {
+  overflow-wrap: break-word;
+}
+
+mjx-container[display="true"] {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0;
+}
+
+mjx-container {
+  overflow-wrap: normal;
+}
+
+article mjx-container:not([display="true"]) {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+article table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.guestbook {
+  border-top: 1px solid $extra-light-gray-color;
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+
+.guestbook p {
+  color: $body-color;
+}

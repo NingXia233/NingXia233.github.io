@@ -32,7 +32,7 @@
 }
 
 .header a:hover {
-  color:black;
+  color: $link-color;
 }
 
 .header-title a {
@@ -51,7 +51,11 @@
 
 .menu {
   padding-top: 0.5rem;
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
 }
 
 .menu-content {

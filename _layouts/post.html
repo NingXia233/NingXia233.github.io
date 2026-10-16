@@ -6,9 +6,9 @@ layout: default
   {{ page.title }}
 </h1>
 {% if page.image %}
-  <img src="{{ site.github.url }}/assets/img/{{ page.image }}">
+  <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: '' | escape }}" decoding="async"{% if page.image_width and page.image_height %} width="{{ page.image_width }}" height="{{ page.image_height }}"{% endif %}>
 {% endif %}
-<article>
+<article class="tex2jax_process">
   {{ content }}
 </article>
 {% if site.hide_post_date != true %}
@@ -20,6 +20,4 @@ layout: default
 {% if site.hide_related_posts != true %}
   {% include related-posts.html %}
 {% endif %}
-{% if site.comments.provider == "valine" %}
-  {% include valine.html %}
-{% endif %}
+{% include comments.html %}
