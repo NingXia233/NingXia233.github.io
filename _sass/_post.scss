@@ -47,11 +47,10 @@ mjx-container {
   overflow-wrap: normal;
 }
 
-article mjx-container:not([display="true"]) {
-  display: inline-block;
-  max-width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
+// MathJax's hidden screen-reader copy must not widen a line of inline math.
+article mjx-container:not([display="true"]) > mjx-assistive-mml {
+  width: 1px !important;
+  height: 1px !important;
 }
 
 article table {
