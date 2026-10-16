@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 790" role="img" aria-labelledby="title desc">
+  <title id="title">自动微分的前向模式与反向模式</title>
+  <desc id="desc">对于从 n 维输入到 m 维输出的函数 F，雅可比矩阵 J 有 m 行 n 列。前向模式指定 n 维输入方向 v，一次传播得到 m 维方向导数 Jv。反向模式指定 m 维输出种子 w，一次回传得到 n 维向量 J 转置乘 w。当输出是标量损失时，m 等于 1，令输出种子为 1，一次回传得到全部 n 个参数的梯度。</desc>
+  <defs>
+    <marker id="brown" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#825b35"/></marker>
+    <marker id="green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#5d7669"/></marker>
+    <style>
+      text { font-family: sans-serif; fill: #4d4033; text-anchor: middle; }
+      .heading { font-size: 28px; font-weight: 600; }
+      .label { font-size: 25px; }
+      .small { font-size: 21px; }
+      .node { fill: #f7efdf; stroke: #b29a78; stroke-width: 2; }
+      .forward { fill: none; stroke: #825b35; stroke-width: 3; marker-end: url(#brown); }
+      .backward { fill: none; stroke: #5d7669; stroke-width: 3; stroke-dasharray: 9 6; marker-end: url(#green); }
+    </style>
+  </defs>
+  <rect width="800" height="790" rx="18" fill="#efe3cb"/>
+  <text x="400" y="49" class="heading">同一个雅可比矩阵，两种传播方向</text>
+
+  <rect x="40" y="105" width="160" height="80" rx="13" class="node"/>
+  <text x="120" y="153" class="label">x ∈ ℝ<tspan baseline-shift="super" font-size="17">n</tspan></text>
+  <rect x="320" y="105" width="160" height="80" rx="13" class="node"/>
+  <text x="400" y="153" class="label">F</text>
+  <rect x="600" y="105" width="160" height="80" rx="13" class="node"/>
+  <text x="680" y="153" class="label">z ∈ ℝ<tspan baseline-shift="super" font-size="17">m</tspan></text>
+  <path d="M200 145H316" class="forward"/>
+  <path d="M480 145H596" class="forward"/>
+  <text x="400" y="240" class="label">J<tspan baseline-shift="sub" font-size="17">ij</tspan> = ∂F<tspan baseline-shift="sub" font-size="17">i</tspan> / ∂x<tspan baseline-shift="sub" font-size="17">j</tspan></text>
+  <text x="400" y="278" class="small">J ∈ ℝ<tspan baseline-shift="super" font-size="15">m×n</tspan>：m 行输出，n 列输入</text>
+
+  <rect x="30" y="320" width="740" height="190" rx="14" fill="#f3e8d5" stroke="#b29a78" stroke-width="2"/>
+  <text x="400" y="360" class="label">前向模式：从输入方向出发</text>
+  <text x="167" y="416" class="label">v ∈ ℝ<tspan baseline-shift="super" font-size="17">n</tspan></text>
+  <path d="M270 407H526" class="forward"/>
+  <text x="400" y="394" class="small">J</text>
+  <text x="638" y="416" class="label">Jv ∈ ℝ<tspan baseline-shift="super" font-size="17">m</tspan></text>
+  <text x="167" y="450" class="small">输入种子</text><text x="638" y="450" class="small">输出方向导数</text>
+  <text x="400" y="488" class="small">一次传播，计算一个输入方向的变化。</text>
+
+  <rect x="30" y="535" width="740" height="220" rx="14" fill="#e4e7dc" stroke="#8c9b8a" stroke-width="2"/>
+  <text x="400" y="575" class="label">反向模式：从输出权重出发</text>
+  <text x="167" y="630" class="label">J<tspan baseline-shift="super" font-size="17">T</tspan>w ∈ ℝ<tspan baseline-shift="super" font-size="17">n</tspan></text>
+  <path d="M530 621H274" class="backward"/>
+  <text x="400" y="607" class="small">J<tspan baseline-shift="super" font-size="15">T</tspan></text>
+  <text x="638" y="630" class="label">w ∈ ℝ<tspan baseline-shift="super" font-size="17">m</tspan></text>
+  <text x="167" y="663" class="small">输入梯度</text><text x="638" y="663" class="small">输出种子</text>
+  <text x="400" y="707" class="small">标量损失 m = 1，取 w = 1：</text>
+  <text x="400" y="738" class="small">一次回传，得到全部 n 个参数的梯度。</text>
+</svg>

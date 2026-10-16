@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 630" role="img" aria-labelledby="title desc">
+  <title id="title">监督学习中的前向计算、梯度与参数更新</title>
+  <desc id="desc">数据中的输入 x 经过模型 fθ 得到预测，预测与真实标签 y 一起构成损失 L。由损失反向求出参数梯度，再按 θ 减去学习率乘梯度更新参数，并把新参数送回模型。棕色实线表示数据计算路径，灰绿色虚线表示梯度和参数更新路径。</desc>
+  <defs>
+    <marker id="brown" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#825b35"/></marker>
+    <marker id="green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#5d7669"/></marker>
+    <style>
+      text { font-family: sans-serif; fill: #4d4033; text-anchor: middle; }
+      .heading { font-size: 28px; font-weight: 600; }
+      .label { font-size: 24px; }
+      .small { font-size: 20px; }
+      .node { fill: #f7efdf; stroke: #b29a78; stroke-width: 2; }
+      .forward { fill: none; stroke: #825b35; stroke-width: 3; marker-end: url(#brown); }
+      .backward { fill: none; stroke: #5d7669; stroke-width: 3; stroke-dasharray: 9 6; marker-end: url(#green); }
+      .green { fill: #5d7669; }
+    </style>
+  </defs>
+  <rect width="800" height="630" rx="18" fill="#efe3cb"/>
+  <text x="400" y="48" class="heading">训练：计算损失，再更新参数</text>
+  <path d="M175 88H225" class="forward"/><text x="298" y="95" class="small">前向计算</text>
+  <path d="M435 88H485" class="backward"/><text x="590" y="95" class="small">求梯度 / 更新</text>
+
+  <rect x="35" y="155" width="180" height="90" rx="13" class="node"/>
+  <text x="125" y="191" class="label">训练数据</text><text x="125" y="223" class="label">(x, y)</text>
+  <rect x="325" y="155" width="150" height="90" rx="13" class="node"/>
+  <text x="400" y="191" class="label">模型</text><text x="400" y="224" class="label">f<tspan baseline-shift="sub" font-size="17">θ</tspan>(x)</text>
+  <rect x="575" y="155" width="150" height="90" rx="13" class="node"/>
+  <text x="650" y="191" class="label">预测</text><text x="650" y="224" class="label">ŷ = f<tspan baseline-shift="sub" font-size="17">θ</tspan>(x)</text>
+  <path d="M215 200H321" class="forward"/><text x="268" y="184" class="small">输入 x</text>
+  <path d="M475 200H571" class="forward"/>
+
+  <rect x="570" y="365" width="160" height="90" rx="13" class="node"/>
+  <text x="650" y="402" class="label">损失</text><text x="650" y="435" class="label">L = ℓ(ŷ, y)</text>
+  <path d="M650 245V361" class="forward"/>
+  <path d="M125 245V525H650V459" class="forward"/>
+  <text x="193" y="361" class="small">真实标签 y</text>
+
+  <rect x="265" y="365" width="260" height="90" rx="13" fill="#e4e7dc" stroke="#8c9b8a" stroke-width="2"/>
+  <text x="395" y="400" class="label">参数更新</text>
+  <text x="395" y="434" font-size="22">θ ← θ − η ∇<tspan baseline-shift="sub" font-size="15">θ</tspan>L</text>
+  <path d="M570 410H529" class="backward"/>
+  <text x="550" y="343" class="small green">梯度 ∇<tspan baseline-shift="sub" font-size="14">θ</tspan>L</text>
+  <path d="M395 365V249" class="backward"/>
+  <text x="451" y="303" class="small green">新参数</text>
+  <text x="400" y="588" class="small">η 是学习率；每一轮都在当前参数处重新计算梯度。</text>
+</svg>

@@ -1,0 +1,53 @@
+<section id="guestbook" class="guestbook" aria-labelledby="guestbook-heading">
+  <h2 id="guestbook-heading">在这里留言</h2>
+  {% if site.comments.enabled %}
+    {% assign repository_url = 'https://github.com/' | append: site.comments.repository %}
+    {% assign giscus = site.comments.giscus %}
+    {% assign discussion_number = giscus.discussion_number | plus: 0 %}
+    {% assign giscus_ready = false %}
+    {% if giscus.repository_id and giscus.repository_id != empty %}
+      {% if discussion_number > 0 %}
+        {% assign giscus_ready = true %}
+      {% elsif giscus.category_id and giscus.category_id != empty %}
+        {% assign giscus_ready = true %}
+      {% endif %}
+    {% endif %}
+    <p>关于物理、学习、写作，或只是打个招呼，都欢迎留下想法。公开留言保存在 GitHub Discussions，更新网站不会清空。</p>
+    {% if giscus.enabled and giscus_ready %}
+      <p>阅读无需登录；留言和回复需要登录 GitHub。你可以管理自己的留言，维护者可以管理讨论。</p>
+      <div class="giscus" aria-label="GitHub Discussions 留言区"></div>
+      <script src="https://giscus.app/client.js"
+              data-repo="{{ site.comments.repository | escape }}"
+              data-repo-id="{{ giscus.repository_id | escape }}"
+              {% if giscus.category_id and giscus.category_id != empty %}
+              data-category="{{ giscus.category | escape }}"
+              data-category-id="{{ giscus.category_id | escape }}"
+              {% endif %}
+              {% if discussion_number > 0 %}
+              data-mapping="number"
+              data-term="{{ discussion_number }}"
+              {% else %}
+              data-mapping="specific"
+              data-term="{{ giscus.term | escape }}"
+              {% endif %}
+              data-strict="1"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="top"
+              data-theme="noborder_light"
+              data-lang="zh-CN"
+              data-loading="lazy"
+              crossorigin="anonymous"
+              async></script>
+      <p class="guestbook-fallback">如果留言区未能显示，也可以<a href="{{ repository_url }}/discussions{% if discussion_number > 0 %}/{{ discussion_number }}{% endif %}">前往 GitHub 阅读和留言</a>。</p>
+    {% else %}
+      {% if discussion_number > 0 %}
+        <p>目前请<a href="{{ repository_url }}/discussions/{{ discussion_number }}">前往 GitHub 阅读和留言</a>。发表和回复需要登录 GitHub。</p>
+      {% else %}
+        <p>目前请<a href="{{ repository_url }}/discussions">前往 GitHub 阅读和留言</a>，或<a href="{{ repository_url }}/discussions/new?title={{ '[留言板] ' | uri_escape }}">写一条新留言</a>。发表和回复需要登录 GitHub。</p>
+      {% endif %}
+    {% endif %}
+  {% else %}
+    <p>留言暂时关闭。</p>
+  {% endif %}
+</section>
