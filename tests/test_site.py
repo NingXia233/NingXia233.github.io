@@ -1,24 +1,28 @@
 """Regression checks for the built site; run after `bundle exec jekyll build`."""
 from html.parser import HTMLParser
 from pathlib import Path
+import os
 import re
 import unittest
 from urllib.parse import unquote, urlsplit, parse_qs
 
 ROOT = Path(__file__).resolve().parents[1]
-SITE = ROOT / '_site'
+SITE = Path(os.environ.get('SITE_DIR', ROOT / '_site'))
 
 
 class Document(HTMLParser):
     def __init__(self, text):
         super().__init__()
         self.links = []
+        self.scripts = []
         self.feed(text)
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         if tag == 'a' and 'href' in attrs:
             self.links.append(attrs['href'])
+        if tag == 'script':
+            self.scripts.append(attrs)
 
 
 class SiteTests(unittest.TestCase):
@@ -94,6 +98,36 @@ class SiteTests(unittest.TestCase):
         board = (SITE / 'guestbook/index.html').read_text()
         self.assertIn('https://github.com/NingXia233/NingXia233.github.io/discussions', board)
         self.assertNotIn('localStorage', board)
+
+    def test_home_and_guestbook_share_a_discussion(self):
+        home = (SITE / 'index.html').read_text()
+        board = (SITE / 'guestbook/index.html').read_text()
+        widgets = []
+        for text in [home, board]:
+            self.assertEqual(text.count('id="guestbook"'), 1)
+            self.assertNotIn('localStorage', text)
+            scripts = [s for s in Document(text).scripts
+                       if s.get('src') == 'https://giscus.app/client.js']
+            self.assertLessEqual(len(scripts), 1)
+            widgets.extend(scripts)
+        self.assertIn('/#guestbook', home)
+        self.assertIn('/#guestbook', board)
+        if 'GISCUS_EXPECTED' in os.environ:
+            self.assertEqual(bool(widgets), os.environ['GISCUS_EXPECTED'] == '1')
+        if widgets:
+            self.assertEqual(len(widgets), 2)
+            self.assertEqual(widgets[0], widgets[1])
+            self.assertEqual(widgets[0]['data-repo'], 'NingXia233/NingXia233.github.io')
+            self.assertTrue(widgets[0]['data-repo-id'])
+            self.assertTrue(widgets[0]['data-term'])
+            self.assertIn(widgets[0]['data-mapping'], ['number', 'specific'])
+            if widgets[0]['data-mapping'] == 'number':
+                self.assertGreater(int(widgets[0]['data-term']), 0)
+            else:
+                self.assertTrue(widgets[0]['data-category-id'])
+        else:
+            for text in [home, board]:
+                self.assertIn('https://github.com/NingXia233/NingXia233.github.io/discussions', text)
 
 
 if __name__ == '__main__':

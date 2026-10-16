@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 810" role="img" aria-labelledby="title desc">
+  <title id="title">f(x,y)=xy+sin x 的计算图与反向梯度</title>
+  <desc id="desc">在 x 等于 2、y 等于 3 时，乘法节点 u 等于 6，正弦节点 v 约等于 0.9093，求和得到 f 约等于 6.9093。棕色实线沿前向传递数值，绿色虚线沿反向传递梯度。乘法对 x 的局部导数为 y，对 y 为 x；正弦对 x 的局部导数为 cos x。x 的两条路径相加，得到偏导数 y 加 cos x，约为 2.5839；对 y 的偏导数为 x，等于 2。</desc>
+  <defs>
+    <marker id="brown" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#825b35"/></marker>
+    <marker id="green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#5d7669"/></marker>
+    <style>
+      text { font-family: sans-serif; fill: #4d4033; text-anchor: middle; }
+      .heading { font-size: 28px; font-weight: 600; }
+      .label { font-size: 24px; }
+      .small { font-size: 20px; }
+      .local { font-size: 20px; fill: #5d7669; paint-order: stroke; stroke: #efe3cb; stroke-width: 7px; stroke-linejoin: round; }
+      .node { fill: #f7efdf; stroke: #b29a78; stroke-width: 2; }
+      .forward { fill: none; stroke: #825b35; stroke-width: 3; marker-end: url(#brown); }
+      .backward { fill: none; stroke: #5d7669; stroke-width: 2.5; stroke-dasharray: 8 6; marker-end: url(#green); }
+    </style>
+  </defs>
+  <rect width="800" height="810" rx="18" fill="#efe3cb"/>
+  <text x="400" y="47" class="heading">计算图：f(x, y) = xy + sin x</text>
+  <path d="M135 88H180" class="forward"/><text x="249" y="95" class="small">前向数值</text>
+  <path d="M405 88H450" class="backward"/><text x="566" y="95" class="small">反向 · 局部导数</text>
+
+  <!-- 前向边与反向边错开，分叉处分别累加。 -->
+  <path d="M180 190L330 238" class="forward"/>
+  <path d="M180 344L330 277" class="forward"/>
+  <path d="M170 380L330 504" class="forward"/>
+  <path d="M490 272L600 368" class="forward"/>
+  <path d="M490 506L600 412" class="forward"/>
+  <path d="M330 218Q255 140 181 165" class="backward"/>
+  <path d="M330 298Q260 343 182 363" class="backward"/>
+  <path d="M330 544Q205 490 147 394" class="backward"/>
+  <path d="M600 340Q560 273 491 248" class="backward"/>
+  <path d="M600 440Q563 506 491 534" class="backward"/>
+
+  <rect x="40" y="140" width="140" height="80" rx="13" class="node"/>
+  <text x="110" y="188" class="label">y = 3</text>
+  <rect x="40" y="315" width="140" height="80" rx="13" class="node"/>
+  <text x="110" y="363" class="label">x = 2</text>
+  <rect x="330" y="210" width="160" height="90" rx="13" class="node"/>
+  <text x="410" y="246" class="label">u = xy</text><text x="410" y="278" class="label">= 6</text>
+  <rect x="330" y="475" width="160" height="90" rx="13" class="node"/>
+  <text x="410" y="511" class="label">v = sin x</text><text x="410" y="543" class="label">≈ 0.9093</text>
+  <rect x="600" y="340" width="170" height="100" rx="13" class="node"/>
+  <text x="685" y="379" class="label">f = u + v</text><text x="685" y="414" class="label">≈ 6.9093</text>
+
+  <text x="269" y="151" class="local">∂u/∂y = x = 2</text>
+  <text x="274" y="386" class="local">∂u/∂x = y = 3</text>
+  <text x="207" y="567" class="local">∂v/∂x = cos 2</text>
+  <text x="207" y="595" class="local">≈ −0.4161</text>
+  <text x="584" y="263" class="local">∂f/∂u = 1</text>
+  <text x="584" y="555" class="local">∂f/∂v = 1</text>
+  <text x="685" y="480" class="small" fill="#5d7669">起点：∂f/∂f = 1</text>
+
+  <rect x="40" y="641" width="720" height="135" rx="13" fill="#e4e7dc" stroke="#8c9b8a" stroke-width="2"/>
+  <text x="400" y="676" class="label">x 分叉的两条路径，需要相加</text>
+  <text x="400" y="714" class="label">∂f/∂x = y + cos x ≈ 2.5839</text>
+  <text x="400" y="752" class="label">∂f/∂y = x = 2</text>
+</svg>

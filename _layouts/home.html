@@ -6,7 +6,7 @@ layout: default
   <h1>欢迎来到我的主页</h1>
   <p>你好，我是夏宁。很高兴你能够发现我的GitHub空间。</p>
   <p>你可以在 <a href="{{ '/research.html' | relative_url }}">Research</a> 了解我的学术工作，在 <a href="{{ '/notes.html' | relative_url }}">Notes</a> 阅读学习笔记，也可以去 <a href="{{ '/novel.html' | relative_url }}">Novel</a> 看看我写的故事。</p>
-  <p>欢迎到<a href="{{ '/guestbook/' | relative_url }}">留言板</a>留下你的脚印👣。</p>
+  <p>欢迎在<a href="{{ '/' | relative_url }}#guestbook">主页留言区</a>留下你的脚印👣。</p>
 </div>
 
 <hr>
@@ -42,3 +42,6 @@ layout: default
     <span class="pagination-button">{{ site.data.settings.pagination.next_page }}</span>
   {% endif %}
 </div>
+{% unless paginator.previous_page %}
+  {% include guestbook.html %}
+{% endunless %}

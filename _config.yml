@@ -29,6 +29,16 @@ lang:                'zh-CN'
 comments:
   enabled: true
   repository: NingXia233/NingXia233.github.io
+  # Enable after installing https://github.com/apps/giscus on this repository.
+  # Fixed discussion #2 already exists. Number mapping does not need a category ID.
+  giscus:
+    enabled: false
+    repository_id: R_kgDOOB13OQ
+    category: ''
+    category_id: ''
+    # Fixed number keeps the homepage and /guestbook/ on the same discussion.
+    discussion_number: 2
+    term: homepage-guestbook
 
 exclude:
   - README.md

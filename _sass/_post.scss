@@ -68,3 +68,19 @@ article table {
 .guestbook p {
   color: $body-color;
 }
+
+article figure {
+  margin: 1.5rem 0;
+}
+
+article figure img {
+  display: block;
+  width: 100%;
+}
+
+article figcaption,
+.guestbook-fallback {
+  margin-top: 0.5rem;
+  font-size: 0.85em;
+  line-height: 1.6;
+}
