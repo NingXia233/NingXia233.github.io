@@ -32,7 +32,7 @@ comments:
   # Enable after installing https://github.com/apps/giscus on this repository.
   # Fixed discussion #2 already exists. Number mapping does not need a category ID.
   giscus:
-    enabled: false
+    enabled: true
     repository_id: R_kgDOOB13OQ
     category: ''
     category_id: ''

@@ -84,15 +84,25 @@ description: "一两句介绍这篇文章的内容。"
 
 公开留言保存在本仓库的 [GitHub Discussions](https://github.com/NingXia233/NingXia233.github.io/discussions) 中。主页底部和导航中的“留言板”使用同一个嵌入组件；文章底部保留带文章标题、原文链接的讨论入口。
 
-主页已准备好 [giscus](https://giscus.app/zh-CN) 嵌入，固定绑定现有的 [Discussion #2](https://github.com/NingXia233/NingXia233.github.io/discussions/2)。固定编号使主页和 `/guestbook/` 共用一个留言本，修改站点标题、URL 或重新部署均不会更换讨论或清除评论。旧文章下独立创建的讨论仍保留在 GitHub，不会自动迁入 #2。
+主页已启用 [giscus](https://giscus.app/zh-CN) 嵌入，固定绑定现有的 [Discussion #2](https://github.com/NingXia233/NingXia233.github.io/discussions/2)。固定编号使主页和 `/guestbook/` 共用一个留言本，修改站点标题、URL 或重新部署均不会更换讨论或清除评论。旧文章下独立创建的讨论仍保留在 GitHub，不会自动迁入 #2。
 
 ### 启用嵌入
 
-当前 `comments.giscus.enabled: false`，因为尚未确认 giscus App 已安装；此时两处仍提供可用的 GitHub 留言入口，不展示无法使用的组件。
+仓库维护者已确认安装 giscus App，当前 `comments.giscus.enabled: true`。主页和留言板均保留前往 Discussion #2 的外链，供脚本不可用时阅读和留言。
 
 1. 打开 [giscus GitHub App](https://github.com/apps/giscus)，安装到 `NingXia233/NingXia233.github.io`。仓库已公开并启用 Discussions。
 2. 在 `_config.yml` 中将 `comments.giscus.enabled` 改为 `true`。已填写真实仓库 ID `R_kgDOOB13OQ` 和现有讨论编号 `2`，无需再填写分类 ID。
 3. 部署后打开主页留言区，确认能阅读讨论，并用 GitHub 登录验证发言/回复。没有登录的访客仍可阅读。
+
+启用后的构建与共享映射回归检查：
+
+```sh
+bundle exec jekyll clean
+JEKYLL_ENV=production bundle exec jekyll build
+GISCUS_EXPECTED=1 python3 -m unittest discover -s tests -v
+```
+
+这些检查只核验生成的 HTML。部署后还应在未登录状态下打开主页和 `/guestbook/`，确认嵌入区实际读取 Discussion #2；随后由本人登录 GitHub 并授权 giscus，发送测试留言和回复，确认两页与 Discussion #2 同步。GitHub Pages 部署成功不能代替线上读取或真实发言验证。
 
 按固定编号读取已有讨论不需要分类 ID。如果想改用新讨论，可先在 GitHub 建好讨论，再修改 `discussion_number`。也可以把它留空，并从 [giscus 配置页](https://giscus.app/zh-CN) 填入真实 `category` 和 `category_id`，以固定 `term: homepage-guestbook` 自动匹配/创建讨论；此时不要随意改 `term` 或分类，否则可能关联到另一个讨论。推荐只允许维护者新建话题的 Announcements 分类，访客仍可在指定话题下回复。
 
