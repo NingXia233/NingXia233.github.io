@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'zh-CN' }}">
+  {% include head.html %}
+  <body class="tex2jax_ignore">
+    <div class="container">
+      {% include header.html %}
+      <div class="content-container">
+        <h1>最新文章</h1>
+        {% include home-posts.html %}
+      </div>
+      {% include footer.html %}
+    </div>
+  </body>
+</html>

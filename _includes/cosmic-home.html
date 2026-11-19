@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'zh-CN' }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#181c2c">
+<title>夏宁 · Ning Xia</title>
+{% feed_meta %}
+{% seo title=false %}
+<link rel="stylesheet" href="{{ '/assets/css/cosmic-home.css' | relative_url }}">
+</head>
+<body id="top">
+<a class="skip" href="#content">跳转至正文</a>
+<header class="site-bar">
+  <div class="shell">
+    <a class="name" href="#top">夏宁 <span lang="en">Ning Xia</span></a>
+    <nav aria-label="主页章节">
+      <a href="#physics-taste" lang="en">Physics Taste</a>
+      <a href="#writing">写作</a>
+      <a href="#making">动手做</a>
+      <a class="atlas-trigger" data-menu-trigger href="#site-index">目录 <span class="atlas-trigger-mark" aria-hidden="true"></span></a>
+      <button class="reading-toggle" type="button" hidden aria-controls="content" aria-pressed="false">静态阅读</button>
+    </nav>
+  </div>
+</header>
+<main id="content" tabindex="-1">
+  <div class="story">
+    <div class="stage" aria-hidden="true"><canvas class="cosmos"></canvas><canvas class="software" hidden></canvas><canvas class="station"></canvas></div>
+    <section class="story-cut" data-scene="0" id="intro" aria-labelledby="intro-title">
+      <div class="shell">
+        <div class="cut-copy">
+          <h1 class="scene-heading reveal" id="intro-title"><span>夏宁</span></h1>
+          <p class="dek reveal"><span>我喜欢的事，还在增加。</span></p>
+          <p class="story-body">我研究凝聚态物理，也写故事，做一些自己想玩的东西。</p>
+          <a class="scroll-cue" href="#physics-taste"><span aria-hidden="true">↓</span> 向下看看</a>
+        </div>
+      </div>
+    </section>
+    <section class="story-cut" data-scene="1" id="physics-taste" aria-labelledby="physics-title">
+      <div class="shell">
+        <div class="cut-copy">
+          <h2 class="reveal" id="physics-title" lang="en"><span>Physics Taste</span></h2>
+          <p class="dek reveal"><span>那些想弄懂的事。</span></p>
+          <p class="story-body chapter-flag">Physics Taste 从我喜欢的物理问题出发。我喜欢追问，一个现象里究竟有什么结构，让我们能在计算之前先做出一点判断？</p>
+          <div class="story-links"><a href="{{ '/notes.html' | relative_url }}">读我的物理笔记 <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </div>
+    </section>
+    <section class="story-cut" data-scene="2" id="writing" aria-labelledby="writing-title">
+      <div class="shell">
+        <div class="cut-copy">
+          <h2 class="reveal" id="writing-title"><span>今晚有风</span></h2>
+          <p class="dek reveal"><span>一阵风过来，球离开了山顶。</span></p>
+          <p class="story-body chapter-flag">《恰好存在》的第一章从一颗悬在对称顶点的小球写起。微小的扰动也可以让故事往另一边走。</p>
+          <div class="story-links"><a href="{{ '/%E7%AC%AC01%E7%AB%A0-%E4%BB%8A%E6%99%9A%E6%9C%89%E9%A3%8E' | relative_url }}">读《恰好存在》第一章 <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </div>
+    </section>
+    <section class="story-cut" data-scene="3" id="making" aria-labelledby="making-title">
+      <div class="shell">
+        <div class="cut-copy">
+          <h2 class="reveal" id="making-title"><span>自己动手做</span></h2>
+          <p class="dek reveal"><span>有些点子，做出来才知道。</span></p>
+          <p class="story-body chapter-flag">做游戏、试规则，看看亲手搭起的小世界会如何运转。</p>
+          <div class="story-links"><a href="https://github.com/NingXia233/Games-Strongly-Correlated" lang="en">Correlated Playroom <span aria-hidden="true">↗</span></a><a href="https://github.com/NingXia233/Sunflower_Myst" lang="en">Sunflower Myst <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <section class="reading" id="site-index" aria-labelledby="index-title">
+    <div class="shell">
+      <header class="reading-head"><h2 id="index-title">网站目录</h2><p lang="en">SITE INDEX</p></header>
+      <ul class="index-list">
+        <li><a href="#latest-posts"><span class="index-label">最新文章<small lang="en">Latest</small></span><span class="index-detail">近期更新与往期文章</span><span class="index-arrow" aria-hidden="true">↗</span></a></li>
+        <li><a href="{{ '/about.html' | relative_url }}"><span class="index-label">关于<small lang="en">About</small></span><span class="index-detail">我的介绍</span><span class="index-arrow" aria-hidden="true">↗</span></a></li>
+        <li><a href="{{ '/research.html' | relative_url }}"><span class="index-label">研究<small lang="en">Research</small></span><span class="index-detail">论文与报告</span><span class="index-arrow" aria-hidden="true">↗</span></a></li>
+        <li><a href="{{ '/notes.html' | relative_url }}"><span class="index-label">笔记<small lang="en">Notes</small></span><span class="index-detail">多体物理、张量网络及其他学习笔记</span><span class="index-arrow" aria-hidden="true">↗</span></a></li>
+        <li><a href="{{ '/novel.html' | relative_url }}"><span class="index-label">小说<small lang="en">Novel</small></span><span class="index-detail">《恰好存在》</span><span class="index-arrow" aria-hidden="true">↗</span></a></li>
+        <li><a href="{{ '/gallery/' | relative_url }}"><span class="index-label">相册<small lang="en">Gallery</small></span><span class="index-detail">照片与图像</span><span class="index-arrow" aria-hidden="true">↗</span></a></li>
+        <li><a href="{{ '/' | relative_url }}#guestbook"><span class="index-label">留言板<small lang="en">Guestbook</small></span><span class="index-detail">留下几句话</span><span class="index-arrow" aria-hidden="true">↗</span></a></li>
+      </ul>
+      <section class="home-feed" id="latest-posts" aria-labelledby="latest-heading">
+        <h2 id="latest-heading">最新文章</h2>
+        {% include home-posts.html heading="h3" %}
+      </section>
+      {% include guestbook.html %}
+      <footer class="footer"><a href="{{ '/guestbook/' | relative_url }}">留言板</a><a href="https://github.com/NingXia233">GitHub <span aria-hidden="true">↗</span></a><a href="#top">回到顶部 <span aria-hidden="true">↑</span></a></footer>
+    </div>
+  </section>
+</main>
+<dialog class="atlas-dialog" id="chapter-atlas" aria-labelledby="atlas-title">
+  <div class="atlas-panel">
+    <div class="shell">
+      <div class="atlas-head">
+        <span class="name">夏宁 <span lang="en">Ning Xia</span></span>
+        <button class="atlas-close" type="button" autofocus>关闭目录 <span aria-hidden="true">×</span></button>
+      </div>
+      <div class="atlas-grid">
+        <div class="atlas-art">
+          <div class="atlas-orbits" aria-hidden="true"></div>
+          <h2 class="atlas-title" id="atlas-title">目录</h2>
+        </div>
+        <nav aria-label="选择主页章节">
+          <ul class="atlas-links">
+            <li><a class="atlas-link" href="#intro">首页 <span aria-hidden="true">↗</span></a></li>
+            <li><a class="atlas-link" href="#physics-taste" lang="en">Physics Taste <span aria-hidden="true">↗</span></a></li>
+            <li><a class="atlas-link" href="#writing">今晚有风 <span aria-hidden="true">↗</span></a></li>
+            <li><a class="atlas-link" href="#making">自己动手做 <span aria-hidden="true">↗</span></a></li>
+            <li><a class="atlas-link" href="#latest-posts">最新文章 <span aria-hidden="true">↗</span></a></li>
+            <li><a class="atlas-link" href="#site-index">完整网站目录 <span aria-hidden="true">↗</span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</dialog>
+<script id="cosmos-shader" type="x-shader/x-fragment">
+#version 300 es
+precision highp float;
+uniform vec2 uViewport;
+uniform vec2 uCenter;
+uniform vec2 uEarthCenter;
+uniform float uRadius;
+uniform float uEarthRadius;
+uniform float uTime;
+uniform float uStage;
+uniform float uTravel;
+uniform float uMix;
+uniform float uView;
+uniform float uQuality;
+uniform int uMode;
+out vec4 fragment;
+
+float hgHash(vec2 p) {
+  vec3 a = fract(vec3(p.xyx) * .1031);
+  a += dot(a, a.yzx + 33.33);
+  return fract((a.x + a.y) * a.z);
+}
+
+float hgNoise(vec2 p) {
+  vec2 i = floor(p), f = fract(p);
+  vec2 w = f * f * (3.0 - 2.0 * f);
+  return mix(mix(hgHash(i), hgHash(i + vec2(1, 0)), w.x),
+    mix(hgHash(i + vec2(0, 1)), hgHash(i + 1.0), w.x), w.y);
+}
+
+mat2 hgRotate(float a) {
+  float s = sin(a), c = cos(a);
+  return mat2(c, s, -s, c);
+}
+
+vec3 hgStarsLayer(vec2 p, float density, float gate, float brightness) {
+  vec2 g = p * density;
+  vec2 id = floor(g);
+  float random = hgHash(id + 11.7);
+  if (random < gate) return vec3(0.0);
+  vec2 center = vec2(hgHash(id + 4.1), hgHash(id + 36.1)) * .70 + .15;
+  vec2 q = fract(g) - center;
+  float b = (random - gate) / (1.0 - gate);
+  float radius = mix(.025, .087, b * b);
+  float distance = dot(q, q) / (radius * radius);
+  float spark = exp(-distance * 3.2) + .07 * exp(-distance * .28);
+  vec3 color = mix(vec3(.51,.69,1.06), vec3(1.04,.76,.48), hgHash(id + 22.2));
+  return color * spark * (brightness * (.32 + .68 * b));
+}
+
+vec3 starsAt(vec2 uv) {
+  vec2 p = uv * vec2(uViewport.x / uViewport.y, 1.0);
+  vec2 q = hgRotate(.32) * (p - vec2(.44,.47));
+  float softLane = exp(-q.y * q.y * 21.0);
+  float grain = hgNoise(q * 8.4) * .64 + hgNoise(q * 18.1 + 11.1) * .36;
+  vec3 dust = mix(vec3(.008,.013,.025),vec3(.025,.020,.028), grain) * softLane * .27;
+  vec3 faint = hgStarsLayer(p + .57,148.0,.85,.28);
+  vec3 bright = hgStarsLayer(p - .31,67.0,.91,1.55);
+  return vec3(.002,.0035,.008) + dust + bright + faint;
+}
+
+// Runtime-only emissivity model: a displaced, rotating convective photosphere and
+// optically thin coronal plasma. Time below is accelerated for the short homepage shot.
+float rgHash(vec3 p) {
+  p = fract(p * vec3(.1031, .11369, .13787));
+  p += dot(p, p.yzx + 19.19);
+  return fract((p.x + p.y) * p.z);
+}
+
+float rgNoise(vec3 p) {
+  vec3 i = floor(p), f = fract(p);
+  f = f * f * (3.0 - 2.0 * f);
+  vec4 nearPlane = vec4(rgHash(i), rgHash(i + vec3(1, 0, 0)),
+                        rgHash(i + vec3(0, 1, 0)), rgHash(i + vec3(1, 1, 0)));
+  i.z += 1.0;
+  vec4 farPlane = vec4(rgHash(i), rgHash(i + vec3(1, 0, 0)),
+                       rgHash(i + vec3(0, 1, 0)), rgHash(i + vec3(1, 1, 0)));
+  vec4 layer = mix(nearPlane, farPlane, f.z);
+  return mix(mix(layer.x, layer.y, f.x), mix(layer.z, layer.w, f.x), f.y);
+}
+
+vec3 rgSpectrum(float heat) {
+  vec3 ember = vec3(.12, .005, .006);
+  vec3 amber = vec3(1.30, .112, .015);
+  vec3 photosphere = vec3(4.4, 1.39, .27);
+  return mix(mix(ember, amber, smoothstep(.05, .68, heat)), photosphere,
+             smoothstep(.55, .99, heat));
+}
+
+float rgBell(float coordinate) {
+  return exp(-coordinate * coordinate);
+}
+
+vec3 rgPhotosphere(vec2 p, float radiusSquared, float time) {
+  float mu = sqrt(max(0.0, 1.0 - radiusSquared));
+  vec3 sphere = vec3(p, mu);
+  float spin = time * .041 * (1.0 - .19 * p.y * p.y);
+  float cosine = cos(spin), sine = sin(spin);
+  sphere.xz = mat2(cosine, sine, -sine, cosine) * sphere.xz;
+  vec3 drift = vec3(.16, -.13, .19) * time;
+  vec3 q = sphere * 6.2 + vec3(11.0, 1.3, 8.5);
+  // Local swirling drift follows the flow of a low-frequency scalar streamfunction.
+  float streamLeft = rgNoise(q + vec3(-.18, 0, .4) + drift * .21);
+  float streamRight = rgNoise(q + vec3(.18, 0, .4) + drift * .21);
+  float streamBottom = rgNoise(q + vec3(0, -.18, .4) + drift * .21);
+  float streamTop = rgNoise(q + vec3(0, .18, .4) + drift * .21);
+  vec3 flow = vec3(streamTop - streamBottom, streamLeft - streamRight, 0) * 2.4;
+  float hearth = rgNoise(q * .73 + vec3(2.4, .7, 8.8) + drift * .8);
+  vec3 plume = q + flow + drift * .38;
+  float medium = rgNoise(plume * 2.45 + vec3(2.0, 3.0, 4.0));
+  float granule = rgNoise(plume * 5.5 - vec3(-6.4, 8.1, 2.0) + drift * .54);
+  float sparks = rgNoise(plume * 12.6 + vec3(3.3, -1.7, 5.2) - drift * .61);
+  float filaments = pow(max(0.0, 1.0 - abs(2.0 * medium - 1.0)), 3.2);
+  float heat = .02 + .64 * hearth + .23 * granule + .15 * filaments + .082 * sparks;
+  heat += .11 * smoothstep(.63, .90, hearth) * smoothstep(.42, .77, medium);
+  float limb = (.42 + .58 * pow(mu, .49)) * (.94 + .063 * sphere.z);
+  vec3 emission = rgSpectrum(clamp(heat, 0.0, 1.0)) * limb;
+  float spicule = rgNoise(sphere * 34.0 + drift * .38);
+  emission += vec3(.89, .088, .012) * pow(max(0.0, 1.0 - mu), 3.4)
+              * (.28 + .72 * spicule);
+  return emission;
+}
+
+vec3 rgProminence(vec2 p, float angle, float span, float height,
+                  float tick, float seed, float strength) {
+  vec2 n = vec2(cos(angle), sin(angle)), tangent = vec2(-n.y, n.x);
+  float side = dot(p, tangent);
+  float altitude = dot(p, n) - sqrt(1.0 - span * span);
+  if (abs(side) > span * 1.50 || altitude < -.092 || altitude > height + .20) return vec3(0);
+  float u = side / span;
+  float skew = .023 * sin(tick * .48 + seed) * u;
+  float turbulence = (.016 + .023 * height) * sin(12.8 * u + seed + tick * .74)
+                     * sin(4.0 * u + tick * .46);
+  float h = (altitude - skew - turbulence * (1.0 - min(1.0, abs(u)))) / height;
+  float ellipse = u * u + h * h;
+  float density = inversesqrt(max(.05, dot(vec2(u / span, h / height),
+                                           vec2(u / span, h / height))));
+  float d = (ellipse - 1.0) * .50 * density;
+  float mainThread = rgBell(d / .010);
+  float outerThread = rgBell((d - .022) / .008);
+  float innerThread = rgBell((d + .027 + .008 * sin(u * 10.0 + tick)) / .011);
+  float heatedSheath = rgBell(d / .054);
+  float along = atan(h, -u) / 3.14159265;
+  float packet = rgBell((along - fract(tick * .15 + seed * .1)) / .126);
+  float lifted = smoothstep(-.066, .037, altitude);
+  float bunch = .59 + .41 * sin((along * 4.5 - tick * .30 + seed) * 6.283185)
+                            * sin((along * 4.5 - tick * .30 + seed) * 6.283185);
+  float feet = rgBell((abs(side) - .93 * span) / .055) * rgBell(altitude / .083);
+  vec3 dense = vec3(2.26, .254, .037) * mainThread * (.54 + packet * .83) * bunch;
+  dense += vec3(.83, .065, .011) * (outerThread + innerThread * .73);
+  dense += vec3(.47, .036, .006) * heatedSheath;
+  return (dense * lifted + vec3(1.08, .15, .016) * feet * .62) * strength;
+}
+
+vec3 rgCorona(vec2 p, float r, float time) {
+  float height = max(r - 1.0, 0.0);
+  vec2 direction = p / max(r, .001);
+  float angular = rgNoise(vec3(direction * 9.0, height * 1.5 - time * .062));
+  float rays = rgNoise(vec3(direction * 27.8, height * 2.7 - time * .36 + angular * 1.8));
+  float wisp = pow(max(0.0, angular * .76 + .24 * rays), 2.4);
+  float rim = exp(-height * 15.7) * (.26 + .78 * rays);
+  float plume = exp(-height * 5.8) * (.21 + 1.2 * wisp);
+  float farGlow = exp(-height * 2.8) * .115;
+  vec3 light = vec3(1.01, .069, .010) * plume + vec3(.81, .054, .018) * farGlow
+              + vec3(1.43, .23, .037) * rim;
+  if (r > 1.69) return light;
+  for (int i = 0; i < 7; ++i) {
+    float f = float(i);
+    float key = rgHash(vec3(f + 8.1, 13.4, 1.9));
+    float angle = f * .94 + .45 + .38 * (key - .5);
+    float pulse = smoothstep(.11, .94, .5 + .5 * sin(time * (.44 + key * .81) + f * 2.37));
+    float reach = (.09 + .42 * key * key) * (.53 + .53 * pulse);
+    float span = .105 + .135 * rgHash(vec3(f + 3.0, 9.6, -5.0));
+    light += rgProminence(p, angle + .018 * sin(time * .32 + f), span, reach,
+                          time * (.83 + key * .46), f * 2.7, .15 + pulse * .71);
+  }
+  return light;
+}
+
+vec4 shadeRedGiant(vec2 p, float time) {
+  float radiusSquared = dot(p, p);
+  if (radiusSquared > 6.25) return vec4(0);
+  float r = sqrt(radiusSquared);
+  float edge = max(.0007, fwidth(r));
+  float coverage = 1.0 - smoothstep(1.0 - edge, 1.0 + edge, r);
+  vec3 emission = vec3(0);
+  if (coverage > .001) emission += rgPhotosphere(p, radiusSquared, time) * coverage;
+  if (coverage < .999) emission += (1.0 - coverage) * rgCorona(p, r, time);
+  return vec4(emission, coverage);
+}
+
+// Units G = c = M = 1. u is inverse Schwarzschild radius and phi is the
+// unwrapped angle in the photon's orbital plane. No lookup maps are used.
+const float bhPi = 3.141592653589793;
+const float bhCritical = 5.196152423;
+
+vec3 bhSky(vec2 uv, vec2 axis, float radialPixels, float bend) {
+    float focal = clamp(3.4 * uRadius, 0.17 * uViewport.y, 0.60 * uViewport.y);
+    float theta = atan(radialPixels / focal);
+    vec3 flatDir = vec3(axis * sin(theta), cos(theta));
+    vec3 escaped = vec3(axis * sin(theta - bend), cos(theta - bend));
+    vec2 flatAngles = vec2(atan(flatDir.x, flatDir.z), asin(clamp(flatDir.y, -1.0, 1.0)));
+    vec2 skyAngles = vec2(atan(escaped.x, escaped.z), asin(clamp(escaped.y, -1.0, 1.0)));
+    return starsAt(uv + (skyAngles - flatAngles) * focal / uViewport);
+}
+
+float bhHash(vec2 cell) {
+    vec3 a = fract(cell.xyx * vec3(0.1031, 0.1030, 0.0973));
+    a += dot(a, a.yzx + 33.33);
+    return fract((a.x + a.y) * a.z);
+}
+
+// Wrap the azimuthal lattice so shear carries filaments through a full orbit.
+float bhTurbulence(float radial, float angle, float cells) {
+    vec2 q = vec2(radial, angle * cells / (2.0 * bhPi));
+    vec2 cell = floor(q), f = fract(q);
+    float y0 = mod(cell.y, cells), y1 = mod(cell.y+1.0, cells);
+    f = f*f*(3.0-2.0*f);
+    return mix(mix(bhHash(vec2(cell.x,y0)), bhHash(vec2(cell.x+1.0,y0)), f.x),
+               mix(bhHash(vec2(cell.x,y1)), bhHash(vec2(cell.x+1.0,y1)), f.x), f.y);
+}
+
+void bhDisk(float invR, float hitPhi, vec2 eDisk, vec2 tilt, float impact,
+            float t, float footprint, inout vec3 light, inout float transmission) {
+    if (invR <= 0.025 || invR >= 0.168) return;
+    float r = 1.0 / invR;
+    float inner = smoothstep(6.0, 7.4, r);
+    float outer = 1.0 - smoothstep(23.0, 39.0, r);
+    float disk = inner * outer;
+    if (disk < 0.001) return;
+    float cs = cos(hitPhi), sn = sin(hitPhi);
+    float az = atan(tilt.x * sn * eDisk.y - tilt.y * cs, sn * eDisk.x);
+    float lr = log(r);
+    float orbital = inversesqrt(r*r*r);
+    float phase = az - t * 3.0 * orbital;
+    float spiral = 2.0 * phase + 5.8 * lr;
+    float eddies = sin(3.0 * phase - 6.5 * lr + 0.7 * sin(spiral));
+    float clouds = bhTurbulence(7.0*lr, phase+2.2*lr, 9.0);
+    float filaments = bhTurbulence(38.0*lr+clouds, phase+1.1*lr, 17.0);
+    float warp = 1.25 * sin(spiral) + 0.75 * eddies + 1.8 * clouds;
+    float broad = 0.5 + 0.5 * sin(16.0 * lr + warp);
+    float middle = sin(40.0 * lr + 1.8 * warp + 0.6 * sin(phase+lr));
+    float fine = sin(93.0 * lr + 3.6 * warp + 1.3 * middle);
+    float detail = 1.0 - smoothstep(0.022, 0.12, footprint);
+    float density = (0.53 + 0.70 * clouds) * (0.66 + 0.29 * broad + 0.12 * eddies)
+                  + detail * (0.12 * middle + 0.07 * fine + 0.28 * (filaments - 0.5));
+    // g = 1 / [u^t (1 - Omega lambda)] for a circular Keplerian emitter.
+    float g = sqrt(1.0 - 3.0 * invR) / max(0.32, 1.0 + orbital * impact * tilt.y * eDisk.x);
+    float heat = min(1.65, pow(8.0 * invR, 0.72) * g);
+    vec3 ember = vec3(1.0, 0.15, 0.032);
+    vec3 gold = vec3(1.0, 0.52, 0.18);
+    vec3 cream = vec3(1.0, 0.86, 0.66);
+    vec3 hue = mix(ember, gold, smoothstep(0.28, 0.80, heat));
+    hue = mix(hue, cream, smoothstep(0.65, 1.39, heat));
+    float flux = 3.85 * pow(9.2 * invR, 1.72) * g*g*g * density;
+    float opacity = disk * (0.82 + 0.15 * density);
+    light += transmission * opacity * flux * hue;
+    transmission *= 1.0 - clamp(opacity, 0.0, 0.988);
+}
+
+vec3 rayBlackHole(vec2 p, vec2 uv, float time, float view) {
+    float radius = length(p);
+    vec2 axis = p / max(radius, 0.0001);
+    float b = max(0.012, bhCritical * radius);
+    // Outside the luminous disk, use the asymptotic Schwarzschild deflection.
+    if (radius > 8.1) {
+        float ib = 1.0/b;
+        float bend = ib * (4.0 + ib * (11.78097245 + ib * 42.666667));
+        return bhSky(uv, axis, radius*uRadius, bend);
+    }
+    float roll = 0.105 + 0.045 * view;
+    vec2 line = vec2(cos(roll), sin(roll));
+    vec2 eDisk = vec2(dot(axis, line), dot(axis, vec2(-line.y, line.x)));
+    float mu = mix(0.145, 0.22, view);
+    vec2 tilt = vec2(mu, sqrt(1.0 - mu * mu));
+    float nextHit = atan(mu, -eDisk.y * tilt.y);
+    float h = 0.14, phi = 0.0, u = 0.0, v = 1.0/b;
+    float trans = 1.0;
+    vec3 light = vec3(0.0);
+    float footprint = 1.0 / max(uRadius * max(abs(radius-1.0), 0.009), 1.0);
+    for (int i=0; i<78; ++i) {
+        // Fourth-order Runge-Kutta for u'' = 3u^2 - u. Eliminating the
+        // radial time coordinate leaves crossings at known orbital angles.
+        float a1 = u * (3.0*u - 1.0);
+        float um = u + (0.5*h)*v;
+        float a2 = um * (3.0*um - 1.0);
+        float un = um + (0.25*h*h)*a1;
+        float a3 = un * (3.0*un - 1.0);
+        float ue = u + h*v + (0.5*h*h)*a2;
+        float a4 = ue * (3.0*ue - 1.0);
+        float nu = u + h*v + (h*h/6.0) * (a1+a2+a3);
+        float nv = v + (h/6.0) * (a1+2.0*a2+2.0*a3+a4);
+        if (nextHit <= phi+h) {
+            float f = clamp((nextHit-phi)/h, 0.0, 1.0);
+            float uh = mix(u, nu, f) - 0.5*h*h*f*(1.0-f)*a2;
+            bhDisk(uh, nextHit, eDisk, tilt, b, time, footprint, light, trans);
+            nextHit += bhPi;
+        }
+        if (nu >= 0.5 || trans < 0.004) break;
+        if (nu <= 0.0) {
+            float exitPhi = phi + h*u/max(u-nu, 1e-12);
+            light += trans * bhSky(uv, axis, radius*uRadius, exitPhi-bhPi);
+            break;
+        }
+        phi += h;
+        u = nu;
+        v = nv;
+    }
+    return light;
+}
+
+// Procedural, orthographically projected planetary spheres. Coastlines are
+// stylized geographic polygon geometry, and cloud fields are sampled in 3D.
+const float pnPi = 3.14159265359;
+const vec3 pnLight = vec3(-0.4915, 0.3596, 0.7932);
+
+float pnHash(vec3 p) {
+  p = fract(p * vec3(.1031, .1059, .0973));
+  p += dot(p, p.yxz + 19.19);
+  return fract((p.x + p.y) * p.z);
+}
+
+float pnNoise(vec3 p) {
+  vec3 i = floor(p);
+  vec3 f = fract(p);
+  f = f * f * (3.0 - 2.0 * f);
+  float a = mix(pnHash(i), pnHash(i + vec3(1,0,0)), f.x);
+  float b = mix(pnHash(i + vec3(0,1,0)), pnHash(i + vec3(1,1,0)), f.x);
+  float c = mix(pnHash(i + vec3(0,0,1)), pnHash(i + vec3(1,0,1)), f.x);
+  float d = mix(pnHash(i + vec3(0,1,1)), pnHash(i + vec3(1,1,1)), f.x);
+  return mix(mix(a,b,f.y), mix(c,d,f.y), f.z);
+}
+
+float pnRough(vec3 p) {
+  return pnNoise(p) * .61 + pnNoise(p * 2.07 + vec3(17.0,5.0,11.0)) * .27
+    + pnNoise(p * 4.19 + vec3(4.0,23.0,7.0)) * .12;
+}
+
+vec3 pnWorld(vec3 n, float longitude, float pitch) {
+  n.yz = mat2(cos(pitch),-sin(pitch),sin(pitch),cos(pitch)) * n.yz;
+  n.xz = mat2(cos(longitude),-sin(longitude),sin(longitude),cos(longitude)) * n.xz;
+  return n;
+}
+
+float pnOutline(vec2 q, const vec2 border[24]) {
+  float gap = 12000.0;
+  bool inside = false;
+  vec2 a = border[23];
+  for (int k = 0; k < 24; ++k) {
+    vec2 b = border[k];
+    vec2 edge = b - a;
+    vec2 delta = q - a;
+    float direction = clamp(dot(delta, edge) / max(.001,dot(edge,edge)),0.0,1.0);
+    vec2 perpendicular = delta - edge * direction;
+    gap = min(gap, dot(perpendicular, perpendicular));
+    float side = edge.x * delta.y - edge.y * delta.x;
+    if ((a.y > q.y) != (b.y > q.y) && ((edge.y > 0.0) == (side > 0.0))) {
+      inside = !inside;
+    }
+    a = b;
+  }
+  return sqrt(gap) * (inside ? -1.0 : 1.0);
+}
+
+const vec2 pnAfrica[24] = vec2[24](
+  vec2(-6,35),vec2(3,36),vec2(10,37),vec2(12,33),vec2(22,32),vec2(31,31),
+  vec2(33,24),vec2(39,15),vec2(43,12),vec2(51,12),vec2(49,5),vec2(43,-1),
+  vec2(40,-11),vec2(36,-20),vec2(31,-30),vec2(20,-35),vec2(16,-29),vec2(12,-18),
+  vec2(13,-7),vec2(8,4),vec2(0,5),vec2(-9,5),vec2(-17,14),vec2(-14,25)
+);
+const vec2 pnSouth[24] = vec2[24](
+  vec2(-79,9),vec2(-74,12),vec2(-68,11),vec2(-62,10),vec2(-57,6),vec2(-50,1),
+  vec2(-44,-2),vec2(-35,-6),vec2(-37,-13),vec2(-39,-20),vec2(-45,-24),vec2(-49,-28),
+  vec2(-52,-34),vec2(-58,-38),vec2(-63,-42),vec2(-65,-49),vec2(-67,-55),vec2(-73,-52),
+  vec2(-74,-42),vec2(-72,-29),vec2(-70,-18),vec2(-76,-12),vec2(-81,-6),vec2(-78,1)
+);
+const vec2 pnNorth[24] = vec2[24](
+  vec2(-153,60),vec2(-163,65),vec2(-154,71),vec2(-134,70),vec2(-126,73),vec2(-103,75),
+  vec2(-89,73),vec2(-83,65),vec2(-76,70),vec2(-65,61),vec2(-57,54),vec2(-66,44),
+  vec2(-75,36),vec2(-81,26),vec2(-86,30),vec2(-96,25),vec2(-97,19),vec2(-87,21),
+  vec2(-86,14),vec2(-79,10),vec2(-86,9),vec2(-104,21),vec2(-120,33),vec2(-135,56)
+);
+const vec2 pnEurasia[24] = vec2[24](
+  vec2(-10,43),vec2(-9,36),vec2(2,42),vec2(12,45),vec2(18,39),vec2(27,40),
+  vec2(36,36),vec2(35,30),vec2(44,13),vec2(57,24),vec2(66,25),vec2(75,19),
+  vec2(79,8),vec2(89,22),vec2(99,10),vec2(106,20),vec2(123,31),vec2(139,51),
+  vec2(178,65),vec2(161,72),vec2(112,75),vec2(52,72),vec2(22,71),vec2(4,56)
+);
+
+float pnEllipse(vec2 q, vec2 center, vec2 axes) {
+  return (length((q - center) / axes) - 1.0) * min(axes.x,axes.y);
+}
+
+float pnCoast(vec2 map) {
+  float d = 8.0;
+  if (map.x > -24.0 && map.x < 58.0 && map.y > -42.0 && map.y < 44.0) {
+    d = min(d,pnOutline(map,pnAfrica));
+    d = min(d,pnEllipse(map,vec2(47,-20),vec2(2.4,6.7)));
+  }
+  if (map.x > -88.0 && map.x < -29.0 && map.y < 19.0 && map.y > -62.0) {
+    d = min(d,pnOutline(map,pnSouth));
+  }
+  if (map.x < -49.0 && map.y > 4.0) {
+    d = min(d,pnOutline(map,pnNorth));
+  }
+  if (map.x > -18.0 && map.y > 4.0) {
+    d = min(d,pnOutline(map,pnEurasia));
+    d = min(d,pnEllipse(map,vec2(-3,55),vec2(3.1,5.5)));
+    d = min(d,pnEllipse(map,vec2(-8,53),vec2(1.65,2.9)));
+    d = min(d,pnEllipse(map,vec2(15,65),vec2(5.2,7.7)));
+    d = min(d,pnEllipse(map,vec2(138,36),vec2(2.5,6.2)));
+  }
+  if (map.x > -79.0 && map.x < -12.0 && map.y > 54.0) {
+    vec2 gl = map - vec2(-44,73);
+    gl = mat2(.907,.422,-.422,.907) * gl;
+    d = min(d,pnEllipse(gl,vec2(0),vec2(16.5,10.5)));
+  }
+  if (map.x > 104.0 && map.y < -7.0) {
+    d = min(d,pnEllipse(map,vec2(134,-26),vec2(19,12)));
+    d = min(d,pnEllipse(map,vec2(170,-42),vec2(2.7,5.9)));
+  }
+  return min(d,map.y + 69.0 + 3.5 * sin(radians(map.x * 2.3)));
+}
+
+float pnCloud(vec3 world, float time) {
+  vec3 wind = world;
+  float latitude = world.y;
+  float rotation = time * (.009 + .010 * latitude * latitude);
+  wind.xz = mat2(cos(rotation),sin(rotation),-sin(rotation),cos(rotation)) * wind.xz;
+  vec3 sw = wind * vec3(9.8,18.0,9.8);
+  float folded = pnRough(wind * 5.1 + vec3(13.0,7.0,0.0));
+  sw += vec3(folded * 4.7, folded * 2.08, folded * 4.25);
+  float vapor = pnRough(sw + vec3(7.0,14.0,8.0));
+  float streams = .935 + .12 * sin(latitude * 28.0 + folded * 7.0);
+  float banks = smoothstep(.49,.69,vapor * streams + max(0.0,folded-.53) * .18);
+  float ridges = pnNoise(sw * 6.1) * .39 + pnNoise(sw * 12.3) * .14;
+  return banks * smoothstep(.18,.52,banks * .74 + ridges);
+}
+
+vec4 shadeEarth(vec2 p, float time) {
+  float rr = dot(p,p);
+  if (rr >= 1.36) return vec4(0);
+  float radial = sqrt(rr);
+  float rim = 1.0 - smoothstep(1.0,1.014,radial);
+  float facing = max(0.0,1.0-rr);
+  vec3 n = vec3(p,sqrt(facing));
+  float incidence = dot(normalize(n),pnLight);
+  float day = smoothstep(-.13,.78,incidence);
+  float twilight = smoothstep(-.25,.24,incidence);
+  float atmosphere = smoothstep(.92,1.008,radial) * (1.0 - smoothstep(1.006,1.135,radial));
+  vec3 skyglow = vec3(.023,.16,.55) * atmosphere * atmosphere * (.10 + .58 * twilight);
+  skyglow += vec3(.13,.52,1.3) * exp(-53.0 * abs(radial-.998)) * (.12 + .62 * twilight);
+
+  if (radial >= 1.0) return vec4(skyglow, rim);
+  float longitude = radians(-11.0) + .11 * sin(time * .042) + .0032 * time;
+  vec3 surf = pnWorld(n,longitude,.19);
+  vec2 map = degrees(vec2(atan(surf.x,surf.z),asin(clamp(surf.y,-1.0,1.0))));
+  float wrinkle = pnRough(surf * 42.0);
+  vec2 coastMap = map + vec2(wrinkle-.5,pnNoise(surf * 39.0 + 5.0)-.5) * 2.8;
+  float coastal = pnCoast(coastMap);
+  float land = 1.0 - smoothstep(-.47,.47,coastal);
+  float hills = pnRough(surf * 21.0 + vec3(6.0));
+  float micro = pnNoise(surf * 113.0);
+  float warmth = 1.0 - smoothstep(.3,.86,abs(surf.y));
+  float desert = (smoothstep(11.0,26.0,map.y) * (1.0-smoothstep(32.0,45.0,map.y)))
+    * smoothstep(-20.0,-7.0,map.x) * (.62 + .34 * hills);
+  desert += .25 * smoothstep(.47,.65,hills);
+  vec3 canopy = mix(vec3(.031,.105,.043),vec3(.12,.18,.064), .50 * hills + .36 * warmth);
+  vec3 sands = mix(vec3(.19,.131,.071),vec3(.49,.30,.123),smoothstep(.17,.84,hills));
+  vec3 ground = mix(canopy,sands,min(1.0,desert)) * (.73 + .47 * wrinkle + .17 * micro);
+  float whitecaps = smoothstep(.825,.975,abs(surf.y) + (hills-.45) * .12);
+  ground = mix(ground,vec3(.57,.71,.80),whitecaps*.98);
+  float shallows = exp(-max(0.0,coastal) * .71) * (.26 + .54 * smoothstep(.35,.82,warmth));
+  vec3 sea = mix(vec3(.003,.018,.079),vec3(.013,.15,.252), .075 + shallows);
+  sea *= .78 + .47 * hills;
+  float glare = pow(max(0.0,dot(reflect(-pnLight,n),vec3(0,0,1))),31.0);
+  sea += vec3(.39,.53,.66) * glare * (.61 + .39 * wrinkle);
+  vec3 sphere = mix(sea,ground,land);
+  float cloud = pnCloud(surf,time);
+  float cloudShade = pnCloud(normalize(surf + vec3(.011,-.009,0.0)),time);
+  sphere *= 1.0 - .41 * cloudShade;
+  vec3 snow = mix(vec3(.19,.27,.39),vec3(.91,.98,1.15), .22 + .78 * cloud);
+  sphere = mix(sphere,snow,cloud*.87);
+  sphere *= .035 + 1.08 * day;
+  float metropolis = smoothstep(.84,.975,pnHash(floor(surf*166.0)));
+  float nighttime = 1.0 - smoothstep(-.43,-.10,incidence);
+  sphere += vec3(.85,.29,.065) * metropolis * land * nighttime * (1.0-whitecaps)
+    * (1.0 - desert) * (1.0-cloud) * .36;
+  float edge = pow(1.0-sqrt(facing),3.25);
+  sphere += vec3(.055,.36,1.0) * (.035 + .40 * edge) * twilight * (1.0-.46*cloud);
+  return vec4(sphere * rim + skyglow, rim);
+}
+
+vec2 pnCrater(vec2 q, float count) {
+  vec2 base = floor(q * count);
+  vec2 cell = fract(q * count);
+  float best = 3.0;
+  vec2 away = vec2(0);
+  for (int x = -1; x <= 1; ++x) {
+    for (int y = -1; y <= 1; ++y) {
+      vec2 offset = vec2(float(x),float(y));
+      vec2 k = base + offset;
+      vec2 point = vec2(pnHash(vec3(k,3)),pnHash(vec3(k,7)));
+      vec2 delta = offset + .17 + .65 * point - cell;
+      float d = length(delta) / (.11 + .35 * point.y);
+      d += smoothstep(.11,.29,point.x) * -.08 + (1.0-smoothstep(.07,.16,point.x)) * 2.0;
+      if (d < best) {
+        best = d;
+        away = delta;
+      }
+    }
+  }
+  float lip = smoothstep(.67,.94,best) * (1.0-smoothstep(.96,1.19,best));
+  float pit = 1.0 - smoothstep(.29,.85,best);
+  float slope = dot(normalize(away + 1e-4),vec2(-.83,.56));
+  return vec2(lip * (.09 + .20 * slope) - pit * (.14 + .17 * slope),lip);
+}
+
+vec4 shadeMoon(vec2 p, float time) {
+  float rr = dot(p,p);
+  if (rr >= 1.012) return vec4(0);
+  float a = 1.0 - smoothstep(1.0,1.012,rr);
+  vec3 n = vec3(p,sqrt(max(0.0,1.0-rr)));
+  vec3 world = pnWorld(normalize(n),.3 + time * .0023,.13);
+  float relief = pnRough(world * 16.0 + 38.0);
+  float grains = pnRough(world * 68.0 + vec3(29.0,0.0,11.0));
+  vec2 map = vec2(atan(world.x,world.z),asin(clamp(world.y,-1.0,1.0)));
+  float basin = pnEllipse(map,vec2(-.29,.39),vec2(.49,.38));
+  basin = min(basin,pnEllipse(map,vec2(.36,.15),vec2(.29,.46)));
+  basin = min(basin,pnEllipse(map,vec2(-.50,-.29),vec2(.35,.28)));
+  float maria = 1.0 - smoothstep(-.07,.03,basin + (relief-.5)*.28 + (grains-.5)*.03);
+  vec2 impacts = pnCrater(map + vec2(.36,.29),6.0);
+  vec2 small = pnCrater(map + vec2(.13,.54),24.0);
+  float albedo = clamp(.45 + .25 * relief + .12 * grains - .24 * maria + impacts.x + small.x*.31,.06,.95);
+  float phase = dot(n,vec3(-.74,.32,.602));
+  float light = max(phase,0.0) * .97 + .015;
+  float bounce = max(0.0,-phase) * .026;
+  vec3 rock = mix(vec3(.68,.73,.81),vec3(.94,.89,.79), .36 + .21*relief);
+  return vec4(rock * albedo * (light+bounce) * a, a);
+}
+
+vec3 hgOver(vec3 sky, vec4 object) {
+  return sky * (1.0 - object.a) + object.rgb;
+}
+
+vec3 hgOrbit(vec2 screen, vec2 skyUv, float stage) {
+  vec2 p = (screen - uEarthCenter) / uEarthRadius;
+  vec3 result = starsAt(skyUv + vec2(stage * .011,0));
+  float available = uViewport.x - uEarthCenter.x;
+  float side = available < 1.56 * uEarthRadius ? -1.0 : 1.0;
+  float phase = sin(uTime * .13 + stage * .8);
+  vec2 moonP = (p - vec2(side * (1.46 + phase * .09), .67 + stage * .10)) / (.226 - stage * .024);
+  result = hgOver(result, shadeMoon(moonP, uTime));
+  return hgOver(result, shadeEarth(p, uTime + 1.9 * stage));
+}
+
+float hgPulse(float distance, float thickness) {
+  float scal = distance / thickness;
+  return exp(-min(scal * scal, 50.0));
+}
+
+vec2 hgLensSheet(vec2 q, float mass) {
+  float r2 = dot(q, q);
+  return q * (1.0 - mass / max(.038, r2));
+}
+
+vec3 hgThroat(vec2 q, float f) {
+  float r = length(q);
+  float invR = 1.0 / max(.055, r + .062);
+  float theta = atan(q.y, q.x + 1e-5);
+  float angle = theta + (.51 + .62 * f) * log(r + .11) + f * 2.19;
+  float coreOpening = smoothstep(.445,.64,f);
+  float whiteWind = smoothstep(.515,.64,f) * (1.0 - smoothstep(.76,.94,f));
+  float twist = sin(angle * 3.0 + f * 8.0);
+  float axis = angle + twist * .10 + .019 * uTime;
+  float wind = (f * 7.0 + .14 * uTime);
+  float transmission = 1.0;
+  vec3 ray = vec3(0.0);
+
+  // Integrate light from translucent sheets along a curved path down the throat.
+  for (int n = 0; n < 8; n++) {
+    float z = float(n) * .37 + .14;
+    float phi = axis + z * .23 + .054 * sin(z * 5.7 + theta * 3.0);
+    vec2 column = vec2(cos(phi),sin(phi));
+    vec2 coord = column * (5.2 + z * 2.1) + vec2(wind,invR * .44 + z);
+    float cells = hgNoise(coord) * .63 + hgNoise(coord * 2.23 + z * 5.0) * .37;
+    float twistLine = phi * 17.0 + cells * 4.63 + invR * (.35 + z * .42) - wind * 2.32;
+    float filaments = pow(.5 + .5 * cos(twistLine), 4.8);
+    float harmonic = pow(.5 + .5 * cos(phi * 38.0 + invR * .88 - wind * 2.65), 8.0);
+    float shell = (.22 + .22 * coreOpening + z * .19) / (1.0 + z * .24);
+    float corrugation = .031 * cos(theta * 5.0 + z - wind) + .044 * sin(theta * 3.0 - z * 3.8);
+    float belt = hgPulse(r - shell - corrugation, .123 + z * .041);
+    float volume = belt * (.035 + cells * cells * .34) * (.12 + filaments * .79 + harmonic * .20);
+    float opacity = 1.0 - exp(-volume * .62);
+    vec3 cold = mix(vec3(.052,.19,.71),vec3(.31,.87,1.36), cells * .87 + whiteWind * .11);
+    vec3 warm = mix(vec3(.29,.11,.38),vec3(1.45,.39,.15), cells);
+    vec3 spectrum = mix(warm, cold, coreOpening * .83 + .12 + cos(phi * 2.0 + f) * .05);
+    ray += transmission * opacity * spectrum * (.75 + whiteWind * .72);
+    transmission *= 1.0 - opacity * .86;
+  }
+
+  float warpR = max(r,.031);
+  float ridge = sin(47.0 * axis + .85 * log(warpR) + hgNoise(vec2(axis * 5.6, 1.2)) * 3.0);
+  float rays = pow(max(ridge, 0.0),11.0) * (1.0-exp(-r * 6.0)) / (1.0 + r * r * 3.9);
+  float grains = hgNoise(vec2(axis * 17.0, invR * 2.2 - wind * 6.2));
+  ray += mix(vec3(.34,.12,.30), vec3(.16,.44,1.01), coreOpening) * rays * (.21 + .66 * grains);
+
+  float causticRadius = .108 + coreOpening * (.14 + .27 * smoothstep(.62,.82, f));
+  float wobble = r + .044 * sin(theta * 3.0 + f * 4.0) + .016 * sin(theta * 7.0 - wind * .6);
+  float line = wobble - causticRadius;
+  vec3 fringe = vec3(hgPulse(line + .015,.028), hgPulse(line,.022), hgPulse(line - .019,.028));
+  float streak = pow(.5 + .5 * cos(theta * 7.0 + f * 15.0), 3.0) * .6 + .43;
+  ray += fringe * vec3(.31,.60,.97) * whiteWind * streak;
+  float cone = hgPulse(r, .105 + .168 * coreOpening);
+  float plume = hgPulse(r, .49) * .091 + pow(cone,3.2) * .94 + cone * .28;
+  ray += (plume * whiteWind) * vec3(.65,1.01,1.72);
+  return ray;
+}
+
+vec3 hgCrossing(vec2 screen, vec2 uv, vec2 p) {
+  float f = uTravel;
+  float unit = min(uViewport.x, uViewport.y);
+  vec2 q = (screen - uCenter) / unit;
+  float r = length(q);
+  float theta = atan(q.y, q.x + 1e-5);
+  float diving = smoothstep(.032,.35,f);
+  float occult = smoothstep(.23,.49,f);
+  float light = smoothstep(.20,.475,f) * (1.0 - smoothstep(.79,.987,f));
+  float bloom = smoothstep(.49,.67,f) * (1.0 - smoothstep(.76,.985,f));
+
+  // A plunging camera gets a changing radial magnification, skew and roll.
+  float roll = diving * .43 + .12 * sin(f * 9.0) * smoothstep(.12,.44,f);
+  vec2 tilt = hgRotate(roll) * p;
+  tilt.x += .15 * diving * tilt.y * (1.0 + abs(tilt.y));
+  tilt.y *= 1.0 + .49 * diving;
+  vec2 beam = hgLensSheet(q, .051 * diving * (1.0 - occult));
+  vec2 lensedUv = (uCenter + beam * unit) / uViewport;
+
+  vec3 color = vec3(.0018,.0027,.007) + starsAt(lensedUv) * (1.0 - occult) * .58;
+  if (f < .47) {
+    vec3 direct = rayBlackHole(tilt,lensedUv,uTime,diving);
+    color = mix(color, direct, 1.0 - occult);
+  }
+  if (light > .001) {
+    vec2 shear = hgRotate(roll + .34 * f) * vec2(q.x, q.y * 1.09);
+    vec2 refraction = hgLensSheet(shear, .061 + .019 * sin(f * 3.1));
+    vec2 twice = (uCenter + refraction * unit) / uViewport;
+    color += (starsAt(twice) * .20 + hgThroat(shear, f)) * light;
+  }
+
+  // At the exit, map the new scene through a deforming, dispersive aperture.
+  if (f > .60) {
+    float e = smoothstep(.60,.96,f);
+    float wide = mix(.02,1.80,e);
+    float shell = r + .055 * sin(theta * 3.0 + f * 5.0) * (1.0 - e)
+      + .024 * cos(theta * 7.0 - f * 11.0) * (1.0 - e);
+    float reveal = 1.0 - smoothstep(wide - .055,wide + .08,shell);
+    float remaining = 1.0 - smoothstep(.68,.97,f);
+    vec2 reformed = hgRotate(-.34 * remaining) * (q * (1.0 + .48 * remaining / (.28 + r)));
+    reformed.x += remaining * .17 * reformed.y;
+    vec2 exitPixel = uCenter + mix(q,reformed,remaining) * unit;
+    if (reveal > .002) {
+      vec3 next = hgOrbit(exitPixel,exitPixel / uViewport,0.0);
+      color = mix(color,next,reveal);
+    }
+    float delta = shell - wide;
+    vec3 edge = vec3(hgPulse(delta + .014,.027),hgPulse(delta,.023),hgPulse(delta-.016,.030));
+    color += (edge * vec3(.47,.69,1.05) * remaining + vec3(.07,.165,.33) * bloom) *
+      (1.0 - smoothstep(.73,1.05,r)) * (.5 + .5 * cos(theta + f * 5.0));
+  }
+  return color;
+}
+
+void main() {
+  vec2 screen = gl_FragCoord.xy, uv = screen / uViewport;
+  vec2 p = (screen - uCenter) / uRadius;
+  vec3 light;
+  if (uMode == 2) {
+    light = hgOrbit(screen, uv, uStage);
+  } else if (uMode == 1) {
+    light = hgCrossing(screen, uv, p);
+  } else {
+    vec3 sky = starsAt(uv);
+    float blend = smoothstep(.18,.83,uMix);
+    if (blend < .999) {
+      float halo = hgPulse(length(p),3.3) * .051;
+      light = hgOver(sky + halo * vec3(1.2,.24,.095), shadeRedGiant(p,uTime));
+    } else {
+      light = sky;
+    }
+    if (blend > .001) {
+      light = mix(light, rayBlackHole(p,uv,uTime,uView),blend);
+    }
+  }
+  vec3 displayColor = pow(vec3(1.0) - exp(-max(light, 0.0) * 1.19),vec3(.77));
+  fragment = vec4(displayColor,1.0);
+}
+</script>
+
+
+<script defer src="{{ '/assets/js/cosmic-home.js' | relative_url }}"></script>
+</body>
+</html>

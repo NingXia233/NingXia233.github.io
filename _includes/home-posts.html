@@ -1,0 +1,31 @@
+{% assign post_heading = include.heading | default: 'h2' %}
+{% for post in paginator.posts %}
+  <div class="posts-container">
+    <{{ post_heading }}>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </{{ post_heading }}>
+    {% if post.image %}
+      <div class="thumbnail-container">
+        <a href="{{ post.url | relative_url }}"><img{% if post.image contains '/covers/' %} class="note-cover"{% endif %} src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: '' | escape }}" loading="lazy" decoding="async"{% if post.image_width and post.image_height %} width="{{ post.image_width }}" height="{{ post.image_height }}"{% endif %}></a>
+      </div>
+    {% endif %}
+    <p>
+      {% if post.description %}{{ post.description | escape }}{% endif %}
+      <a href="{{ post.url | relative_url }}">阅读全文</a>
+      <span class="post-date"><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date_to_string }} - <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</span>
+    </p>
+  </div>
+{% endfor %}
+<!-- Pagination links -->
+<nav class="pagination" aria-label="文章分页">
+  {% if paginator.next_page %}
+    <a class="pagination-button pagination-active next" href="{{ paginator.next_page_path | relative_url }}">{{ site.data.settings.pagination.previous_page }}</a>
+  {% else %}
+    <span class="pagination-button">{{ site.data.settings.pagination.previous_page }}</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    <a class="pagination-button pagination-active" href="{{ paginator.previous_page_path | relative_url }}">{{ site.data.settings.pagination.next_page }}</a>
+  {% else %}
+    <span class="pagination-button">{{ site.data.settings.pagination.next_page }}</span>
+  {% endif %}
+</nav>
