@@ -1,0 +1,21 @@
+{%- assign home_url = '/' | relative_url -%}
+{%- assign chapter_root = home_url -%}
+{%- if include.home -%}
+  {%- assign chapter_root = '' -%}
+{%- endif %}
+<header class="site-bar">
+  <div class="shell">
+    <div class="site-identity">
+      <a class="name" href="{% if include.home %}#top{% else %}{{ home_url }}{% endif %}">夏宁 <span lang="en">Ning Xia</span></a>
+      {% if include.home %}
+        <button class="reading-toggle" type="button" hidden aria-controls="content" aria-pressed="false">静态阅读</button>
+      {% endif %}
+    </div>
+    <nav aria-label="主导航">
+      <a href="{{ chapter_root }}#physics-taste" lang="en">Physics Taste</a>
+      <a class="chapter-secondary" href="{{ chapter_root }}#writing">写作</a>
+      <a class="chapter-secondary" href="{{ chapter_root }}#making">动手做</a>
+      <a class="atlas-trigger" data-menu-trigger href="{{ chapter_root }}#site-index">目录 <span class="atlas-trigger-mark" aria-hidden="true"></span></a>
+    </nav>
+  </div>
+</header>

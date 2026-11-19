@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'zh-CN' }}">
+  {% include head.html %}
+  <body class="interior tex2jax_ignore" id="top">
+    <a class="skip" href="#content">跳转至正文</a>
+    {% include site-navbar.html %}
+    <main id="content" class="container interior-main" tabindex="-1">
+      <div class="interior-content">
+        {{ include.inner }}
+      </div>
+    </main>
+    {% include footer.html %}
+    {% include site-atlas.html %}
+  </body>
+</html>

@@ -7,22 +7,12 @@
 <title>夏宁 · Ning Xia</title>
 {% feed_meta %}
 {% seo title=false %}
+<link rel="stylesheet" href="{{ '/assets/css/site-shell.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/cosmic-home.css' | relative_url }}">
 </head>
-<body id="top">
+<body id="top" class="cosmic-home">
 <a class="skip" href="#content">跳转至正文</a>
-<header class="site-bar">
-  <div class="shell">
-    <a class="name" href="#top">夏宁 <span lang="en">Ning Xia</span></a>
-    <nav aria-label="主页章节">
-      <a href="#physics-taste" lang="en">Physics Taste</a>
-      <a href="#writing">写作</a>
-      <a href="#making">动手做</a>
-      <a class="atlas-trigger" data-menu-trigger href="#site-index">目录 <span class="atlas-trigger-mark" aria-hidden="true"></span></a>
-      <button class="reading-toggle" type="button" hidden aria-controls="content" aria-pressed="false">静态阅读</button>
-    </nav>
-  </div>
-</header>
+{% include site-navbar.html home=true %}
 <main id="content" tabindex="-1">
   <div class="story">
     <div class="stage" aria-hidden="true"><canvas class="cosmos"></canvas><canvas class="software" hidden></canvas><canvas class="station"></canvas></div>
@@ -88,32 +78,7 @@
     </div>
   </section>
 </main>
-<dialog class="atlas-dialog" id="chapter-atlas" aria-labelledby="atlas-title">
-  <div class="atlas-panel">
-    <div class="shell">
-      <div class="atlas-head">
-        <span class="name">夏宁 <span lang="en">Ning Xia</span></span>
-        <button class="atlas-close" type="button" autofocus>关闭目录 <span aria-hidden="true">×</span></button>
-      </div>
-      <div class="atlas-grid">
-        <div class="atlas-art">
-          <div class="atlas-orbits" aria-hidden="true"></div>
-          <h2 class="atlas-title" id="atlas-title">目录</h2>
-        </div>
-        <nav aria-label="选择主页章节">
-          <ul class="atlas-links">
-            <li><a class="atlas-link" href="#intro">首页 <span aria-hidden="true">↗</span></a></li>
-            <li><a class="atlas-link" href="#physics-taste" lang="en">Physics Taste <span aria-hidden="true">↗</span></a></li>
-            <li><a class="atlas-link" href="#writing">今晚有风 <span aria-hidden="true">↗</span></a></li>
-            <li><a class="atlas-link" href="#making">自己动手做 <span aria-hidden="true">↗</span></a></li>
-            <li><a class="atlas-link" href="#latest-posts">最新文章 <span aria-hidden="true">↗</span></a></li>
-            <li><a class="atlas-link" href="#site-index">完整网站目录 <span aria-hidden="true">↗</span></a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </div>
-</dialog>
+{% include site-atlas.html home=true %}
 <script id="cosmos-shader" type="x-shader/x-fragment">
 #version 300 es
 precision highp float;
@@ -815,5 +780,6 @@ void main() {
 
 
 <script defer src="{{ '/assets/js/cosmic-home.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/site-atlas.js' | relative_url }}"></script>
 </body>
 </html>

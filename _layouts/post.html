@@ -2,18 +2,26 @@
 layout: default
 ---
 
-<h1>
-  {{ page.title }}
-</h1>
+<header class="interior-hero">
+  <nav class="interior-kicker" aria-label="面包屑导航">
+    <a href="{{ '/#latest-posts' | relative_url }}">最新文章</a>
+    {% if page.categories contains 'notes' %}
+      <span aria-hidden="true">/</span> <a href="{{ '/notes.html' | relative_url }}">物理笔记</a>
+    {% elsif page.categories contains 'novel' %}
+      <span aria-hidden="true">/</span> <a href="{{ '/novel.html' | relative_url }}">小说</a>
+    {% endif %}
+  </nav>
+  <h1>{{ page.title }}</h1>
+  {% if site.hide_post_date != true %}
+    {% include post-date.html %}
+  {% endif %}
+</header>
 {% if page.image %}
   <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: '' | escape }}" decoding="async"{% if page.image_width and page.image_height %} width="{{ page.image_width }}" height="{{ page.image_height }}"{% endif %}>
 {% endif %}
 <article class="tex2jax_process">
   {{ content }}
 </article>
-{% if site.hide_post_date != true %}
-  {% include post-date.html %}
-{% endif %}
 {% if site.hide_post_share != true %}
   {% include social-sharing.html %}
 {% endif %}
