@@ -2,11 +2,11 @@
 google-ID: ''
 
 menu:
-- {name: 'About',   url: 'about.html'}
-- {name: 'Notes', url: 'notes.html'}
-- {name: 'Novel', url: 'novel.html'}
-- {name: 'Research', url: 'research.html'}
-- {name: 'Gallery', url: 'gallery/'}
+- {name: 'About', label: '关于', url: 'about.html'}
+- {name: 'Notes', label: '笔记', url: 'notes.html'}
+- {name: 'Novel', label: '小说', url: 'novel.html'}
+- {name: 'Research', label: '研究', url: 'research.html'}
+- {name: 'Gallery', label: '相册', url: 'gallery/'}
 - {name: '留言板', url: 'guestbook/'}
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:

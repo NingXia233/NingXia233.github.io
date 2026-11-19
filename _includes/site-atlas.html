@@ -1,0 +1,37 @@
+{%- assign chapter_root = '' -%}
+{%- unless include.home -%}
+  {%- assign chapter_root = '/' | relative_url -%}
+{%- endunless %}
+<dialog class="atlas-dialog" id="chapter-atlas" aria-labelledby="atlas-title">
+  <div class="atlas-panel">
+    <div class="shell">
+      <div class="atlas-head">
+        <span class="name">夏宁 <span lang="en">Ning Xia</span></span>
+        <button class="atlas-close" type="button" autofocus>关闭目录 <span aria-hidden="true">×</span></button>
+      </div>
+      <div class="atlas-grid">
+        <div class="atlas-art">
+          <div class="atlas-orbits" aria-hidden="true"></div>
+          <h2 class="atlas-title" id="atlas-title">目录</h2>
+        </div>
+        <nav aria-label="选择主页章节">
+          <ul class="atlas-links">
+            <li><a class="atlas-link" href="{{ chapter_root }}#intro">首页 <span aria-hidden="true">↗</span></a></li>
+            <li><a class="atlas-link" href="{{ chapter_root }}#physics-taste" lang="en">Physics Taste <span aria-hidden="true">↗</span></a></li>
+            <li><a class="atlas-link" href="{{ chapter_root }}#writing">今晚有风 <span aria-hidden="true">↗</span></a></li>
+            <li><a class="atlas-link" href="{{ chapter_root }}#making">自己动手做 <span aria-hidden="true">↗</span></a></li>
+            <li><a class="atlas-link" href="{{ chapter_root }}#latest-posts">最新文章 <span aria-hidden="true">↗</span></a></li>
+            <li><a class="atlas-link" href="{{ chapter_root }}#site-index">完整网站目录 <span aria-hidden="true">↗</span></a></li>
+          </ul>
+          <ul class="atlas-resources" aria-label="网站栏目">
+            {% for item in site.data.settings.menu %}
+              {% assign item_path = item.url | prepend: '/' %}
+              {% assign clean_path = item_path | remove_first: '.html' %}
+              <li><a href="{{ item_path | relative_url }}"{% if page.url == item_path or page.url == clean_path %} aria-current="page"{% endif %}>{{ item.label | default: item.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</dialog>
